@@ -115,8 +115,8 @@ export default function App() {
   if (!profile || !catalog)
     return (
       <main className="boot-screen">
-        <img src="/favicon.svg" alt="" />
-        <h1>Access</h1>
+        <img src="/logo.png" alt="" />
+        <h1>Helping Hand</h1>
         {error ? (
           <ErrorMessage message={error} retry={() => setRetry((n) => n + 1)} />
         ) : (
@@ -144,9 +144,9 @@ export default function App() {
           onClick={() => navigate()}
           aria-label="Access home"
         >
-          <img src="/favicon.svg" alt="" />
+          <img src="/logo.png" alt="" />
           <span>
-            access<span className="brand-dot">.</span>
+            Helping Hand
           </span>
         </button>
         <div className="header-search">
@@ -162,7 +162,6 @@ export default function App() {
           </button>
         </div>
         <div className="header-right">
-          <span className="demo-label">{isMock ? "DEMO" : "COMMUNITY"}</span>
           <button
             className="points-button"
             onClick={() => navigate("achievements")}

@@ -159,7 +159,7 @@ export default function LocationDetails({
             </section>
             <section className="feature-section">
               <div className="section-heading">
-                <h2>Here to help</h2>
+                <h2>Helpful facilities</h2>
                 <span>{place.amenities.length} amenities</span>
               </div>
               <FeatureChips ids={place.amenities} catalog={catalog.amenities} />
@@ -167,7 +167,7 @@ export default function LocationDetails({
             </section>
             <section className="feature-section">
               <div className="section-heading">
-                <h2>Good to know</h2>
+                <h2>Accessibility issues</h2>
                 <Icon name="TriangleAlert" size={17} />
               </div>
               <p className="section-copy">
