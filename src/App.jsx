@@ -139,6 +139,12 @@ export default function App() {
         Skip to content
       </a>
       <header className="app-header">
+        <IconButton
+          icon="Menu"
+          label="Open menu"
+          className="menu-button"
+          onClick={() => setMenu(true)}
+        />
         <button
           className="brand"
           onClick={() => navigate()}
@@ -148,11 +154,6 @@ export default function App() {
           <span>Helping Hand</span>
         </button>
         <div className="header-search">
-          <IconButton
-            icon="Menu"
-            label="Open menu"
-            onClick={() => setMenu(true)}
-          />
           <button className="search-trigger" onClick={() => navigate("search")}>
             <Icon name="Search" size={20} />
             <span>Search a place or address</span>

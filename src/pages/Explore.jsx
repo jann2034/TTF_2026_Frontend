@@ -77,7 +77,6 @@ export default function Explore({ locations, category, onCategory, onSelect }) {
           </h2>
           <p>Small discoveries. More confident journeys.</p>
         </div>
-        <Icon name="Navigation" size={18} />
       </div>
       <div className="places-list">
         {locations.map((place) => (
