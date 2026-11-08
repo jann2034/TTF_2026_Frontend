@@ -1,9 +1,39 @@
 import { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { isMock } from "../api/client";
+import { api, isMock } from "../api/client";
 import { IconButton } from "./UI";
 const center = isMock ? [47.8262, 13.04] : [47.9186, 13.7995];
+const STREET_MIN_ZOOM = 14;
+// Licence terms: this credit must stay visible whenever the street layer is shown.
+const STREET_CREDIT =
+  '<a href="https://portal.ttf.nexyo.io/products?id=8beab1aa-496d-4791-bc13-788e3b85e2c8">Street data: Hackathon Veterans</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> &middot; &copy; OpenStreetMap contributors';
+function streetStyle({ properties: p }) {
+  const color =
+    p.highway === "steps" || p.wheelchair === "no"
+      ? "#c62828"
+      : p.wheelchair === "limited"
+        ? "#b26a00"
+        : p.wheelchair === "yes" || p.wheelchair === "designated"
+          ? "#2e7d32"
+          : "#5b7fb5";
+  const known = color !== "#5b7fb5";
+  return {
+    color,
+    weight: known ? 4 : 2,
+    opacity: known ? 0.9 : 0.45,
+    fill: false,
+  };
+}
+function streetDetails(properties) {
+  const details = document.createElement("div");
+  Object.entries(properties).forEach(([key, value]) => {
+    const line = document.createElement("div");
+    line.textContent = `${key.replaceAll("_", " ")}: ${value}`;
+    details.append(line);
+  });
+  return details;
+}
 const wheelchair =
   '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="16" cy="4" r="2"/><path d="m15 8-3 5h5l3 5M12 8l-3 3M10 14a5 5 0 1 0 6 6"/></svg>';
 export default function MapView({ locations, selected, onSelect, notify }) {
@@ -15,6 +45,7 @@ export default function MapView({ locations, selected, onSelect, notify }) {
   callbacks.current = { onSelect, notify };
   const [offline, setOffline] = useState(false);
   const [tilesReady, setTilesReady] = useState(false);
+  const [showStreets, setShowStreets] = useState(!isMock);
   useEffect(() => {
     const instance = L.map(container.current, {
       zoomControl: false,
@@ -80,6 +111,50 @@ export default function MapView({ locations, selected, onSelect, notify }) {
       instance.remove();
     };
   }, []);
+  useEffect(() => {
+    if (!showStreets) return;
+    const instance = map.current;
+    const streets = L.geoJSON(null, {
+      attribution: STREET_CREDIT,
+      renderer: L.canvas({ padding: 0.2 }),
+      style: streetStyle,
+      onEachFeature: (feature, layer) =>
+        layer.bindPopup(() => streetDetails(feature.properties)),
+    }).addTo(instance);
+    let latest = 0;
+    const load = () => {
+      const request = ++latest;
+      if (instance.getZoom() < STREET_MIN_ZOOM) {
+        streets.clearLayers();
+        return;
+      }
+      const bounds = instance.getBounds().pad(0.2);
+      api
+        .getStreetLayer(
+          [
+            bounds.getWest(),
+            bounds.getSouth(),
+            bounds.getEast(),
+            bounds.getNorth(),
+          ].join(","),
+        )
+        .then((data) => {
+          if (request !== latest) return;
+          streets.clearLayers();
+          streets.addData(data);
+        })
+        .catch(() => {
+          if (request === latest) setShowStreets(false);
+        });
+    };
+    load();
+    instance.on("moveend", load);
+    return () => {
+      latest += 1;
+      instance.off("moveend", load);
+      instance.removeLayer(streets);
+    };
+  }, [showStreets]);
   useEffect(() => {
     if (!markers.current) return;
     markers.current.clearLayers();
@@ -204,6 +279,14 @@ export default function MapView({ locations, selected, onSelect, notify }) {
             setOffline(!offline);
           }}
         />
+        {!isMock && (
+          <IconButton
+            icon="Footprints"
+            label={showStreets ? "Hide street layer" : "Show street layer"}
+            aria-pressed={showStreets}
+            onClick={() => setShowStreets(!showStreets)}
+          />
+        )}
         <IconButton
           icon="Compass"
           label="Back to demo neighborhood"

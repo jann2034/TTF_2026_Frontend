@@ -12,6 +12,9 @@ Set `VITE_API_MODE=http` and `VITE_API_BASE_URL` to the API root. Requests and r
 | POST   | `/locations/:id/reviews`                 | `{ rating, amenities, obstacles, text }` | `{ location, profile, pointsAwarded }`  |
 | POST   | `/locations/:id/reports`                 | `{ type, description }`                  | Updated `Location`                      |
 | POST   | `/locations/:id/reports/:reportId/votes` | `{ stillRelevant: boolean }`             | Updated `Location`                      |
+| GET    | `/street-layer?bbox=w,s,e,n`             | Real API only                            | GeoJSON features plus credit fields     |
+
+The street layer is CC BY-SA 4.0 and must stay separate from places, facts and exports. Show its credit wherever it appears.
 
 ## Types
 
