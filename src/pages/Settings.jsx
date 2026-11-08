@@ -5,7 +5,7 @@ export default function Settings({ onBack }) {
     <section className="standalone-page settings-page">
       <PageHeader
         title="Settings"
-        subtitle="Make Access feel like you."
+        subtitle="Make Helping Hand feel like you."
         onBack={onBack}
       />
       <div className="page-body">
@@ -45,8 +45,8 @@ export default function Settings({ onBack }) {
           </div>
         ))}
         <div className="settings-footer">
-          <img src="/favicon.svg" alt="" />
-          <strong>Access</strong>
+          <img src="/logo.png" alt="" />
+          <strong>Helping Hand</strong>
           <p>A little more accessible, together.</p>
           <span>Hackathon edition · 1.0</span>
         </div>

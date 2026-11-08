@@ -115,8 +115,8 @@ export default function App() {
   if (!profile || !catalog)
     return (
       <main className="boot-screen">
-        <img src="/favicon.svg" alt="" />
-        <h1>Access</h1>
+        <img src="/logo.png" alt="" />
+        <h1>Helping Hand</h1>
         {error ? (
           <ErrorMessage message={error} retry={() => setRetry((n) => n + 1)} />
         ) : (
@@ -142,12 +142,10 @@ export default function App() {
         <button
           className="brand"
           onClick={() => navigate()}
-          aria-label="Access home"
+          aria-label="Helping Hand home"
         >
-          <img src="/favicon.svg" alt="" />
-          <span>
-            access<span className="brand-dot">.</span>
-          </span>
+          <img src="/logo.png" alt="" />
+          <span>Helping Hand</span>
         </button>
         <div className="header-search">
           <IconButton
@@ -281,7 +279,7 @@ export default function App() {
       )}
       {menu && (
         <Modal
-          title="Your Access"
+          title="Your Helping Hand"
           className="drawer-backdrop"
           onClose={() => setMenu(false)}
         >
@@ -326,7 +324,7 @@ export default function App() {
                 Every observation makes someone’s next journey a little easier.
               </p>
             </div>
-            <p className="demo-caption">Access · Hackathon edition</p>
+            <p className="demo-caption">Helping Hand · Hackathon edition</p>
           </div>
         </Modal>
       )}

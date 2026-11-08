@@ -133,6 +133,7 @@ button:not(:disabled):active {
 .brand img {
   width: 35px;
   height: 35px;
+  object-fit: contain;
 }
 .brand > span {
   font-family: Manrope, sans-serif;
@@ -1547,6 +1548,7 @@ select {
 .settings-footer img {
   width: 33px;
   height: 33px;
+  object-fit: contain;
   display: block;
   margin: 0 auto 10px;
 }
@@ -1783,6 +1785,7 @@ select {
 .boot-screen > img {
   width: 55px;
   height: 55px;
+  object-fit: contain;
 }
 .boot-screen h1 {
   font-size: 27px;
