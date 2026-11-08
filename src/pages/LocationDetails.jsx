@@ -126,11 +126,7 @@ export default function LocationDetails({
                   Live updates{" "}
                   <span className="count-pill">{place.reports.length}</span>
                 </h2>
-                <span>From the community</span>
               </div>
-              <p className="section-copy">
-                Things that might affect your visit right now.
-              </p>
               <div className="live-issues">
                 {place.reports.map((report) => {
                   const type = catalog.reportTypes.find(
@@ -184,9 +180,6 @@ export default function LocationDetails({
                 <h2>Accessibility issues</h2>
                 <Icon name="TriangleAlert" size={17} />
               </div>
-              <p className="section-copy">
-                Potential obstacles to plan around.
-              </p>
               <FeatureChips
                 ids={place.obstacles}
                 catalog={catalog.obstacles}
@@ -223,21 +216,10 @@ export default function LocationDetails({
                 </ul>
               </section>
             )}
-            <div className="contribution-prompt">
-              <Icon name="HeartHandshake" size={25} />
-              <div>
-                <strong>Been here? Your experience matters.</strong>
-                <p>Help someone plan their next visit.</p>
-              </div>
-            </div>
             <button className="primary-button full" onClick={onReview}>
               <Icon name="Plus" size={18} />
               Leave a review
             </button>
-            <p className="data-note">
-              Community observations can change. Check the features that matter
-              to you.
-            </p>
           </>
         ) : (
           <>

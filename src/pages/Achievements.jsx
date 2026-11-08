@@ -27,20 +27,15 @@ export default function Achievements({ profile, onBack }) {
     <section className="standalone-page achievements-page">
       <PageHeader
         title="Your achievements"
-        subtitle="Small actions. Real impact."
         onBack={onBack}
       />
       <div className="page-body">
         <div className="achievement-hero">
-          <span className="hero-orbit one" />
-          <span className="hero-orbit two" />
           <Icon name="Trophy" size={45} />
-          <span className="eyebrow">MAKING A DIFFERENCE</span>
           <h2>
             {profile.points}
             <span>community points</span>
           </h2>
-          <p>Every contribution helps open another door.</p>
         </div>
         <div className="section-heading">
           <h2>Your milestones</h2>
@@ -101,7 +96,6 @@ export default function Achievements({ profile, onBack }) {
             </article>
           ))}
         </div>
-        <p className="data-note">Better access starts with people like you.</p>
       </div>
     </section>
   );

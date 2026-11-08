@@ -96,11 +96,9 @@ export function PlaceArt({ place, large = false }) {
       aria-label={`${place.category} illustration`}
       role="img"
     >
-      <span className="art-sun" />
       <span className="art-building">
         <Icon name={icons[place.category]} size={large ? 48 : 28} />
       </span>
-      <span className="art-ground" />
     </div>
   );
 }

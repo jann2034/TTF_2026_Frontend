@@ -120,7 +120,7 @@ export default function App() {
         {error ? (
           <ErrorMessage message={error} retry={() => setRetry((n) => n + 1)} />
         ) : (
-          <p>Finding a little more possibility…</p>
+          <p>Loading…</p>
         )}
       </main>
     );
@@ -139,26 +139,24 @@ export default function App() {
         Skip to content
       </a>
       <header className="app-header">
+        <IconButton
+          icon="Menu"
+          label="Open menu"
+          className="menu-button"
+          onClick={() => setMenu(true)}
+        />
         <button
           className="brand"
           onClick={() => navigate()}
-          aria-label="Access home"
+          aria-label="Helping Hand home"
         >
           <img src="/logo.png" alt="" />
-          <span>
-            Helping Hand
-          </span>
+          <span>Helping Hand</span>
         </button>
         <div className="header-search">
-          <IconButton
-            icon="Menu"
-            label="Open menu"
-            onClick={() => setMenu(true)}
-          />
           <button className="search-trigger" onClick={() => navigate("search")}>
             <Icon name="Search" size={20} />
             <span>Search a place or address</span>
-            <span className="search-shortcut">Explore</span>
           </button>
         </div>
         <div className="header-right">
@@ -288,7 +286,7 @@ export default function App() {
       )}
       {menu && (
         <Modal
-          title="Your Access"
+          title="Your profile"
           className="drawer-backdrop"
           onClose={() => setMenu(false)}
         >
@@ -296,7 +294,6 @@ export default function App() {
             <div className="profile-card">
               <span className="avatar big">{profile.initials}</span>
               <h2>{profile.name}</h2>
-              <p>Making room for everyone.</p>
               <button
                 className="profile-points"
                 onClick={() => navigate("achievements")}
@@ -322,18 +319,6 @@ export default function App() {
                 <Icon name="ChevronRight" size={17} />
               </button>
             </nav>
-            <div className="drawer-message">
-              <Icon name="HeartHandshake" size={30} />
-              <h3>
-                Better access.
-                <br />
-                Built together.
-              </h3>
-              <p>
-                Every observation makes someone’s next journey a little easier.
-              </p>
-            </div>
-            <p className="demo-caption">Access · Hackathon edition</p>
           </div>
         </Modal>
       )}

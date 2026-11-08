@@ -1,13 +1,10 @@
-@import "@fontsource/dm-sans/latin-400.css";
-@import "@fontsource/dm-sans/latin-500.css";
-@import "@fontsource/dm-sans/latin-600.css";
-@import "@fontsource/dm-sans/latin-700.css";
-@import "@fontsource/manrope/latin-600.css";
-@import "@fontsource/manrope/latin-700.css";
-@import "@fontsource/manrope/latin-800.css";
+@import "@fontsource/nunito/latin-400.css";
+@import "@fontsource/nunito/latin-600.css";
+@import "@fontsource/nunito/latin-700.css";
+@import "@fontsource/nunito/latin-800.css";
 
 :root {
-  font-family: "DM Sans", sans-serif;
+  font-family: Nunito, system-ui, sans-serif;
   color: #202b3d;
   background: #f6f8fb;
   font-synthesis: none;
@@ -73,20 +70,20 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Manrope, "DM Sans", sans-serif;
+  font-family: Nunito, system-ui, sans-serif;
 }
 h1 {
   font-weight: 800;
-  letter-spacing: -1px;
+  letter-spacing: -0.33px;
 }
 h2 {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 750;
-  letter-spacing: -0.35px;
+  letter-spacing: -0.12px;
 }
 h3 {
-  font-size: 15px;
-  letter-spacing: -0.15px;
+  font-size: 17px;
+  letter-spacing: -0.05px;
 }
 p {
   line-height: 1.65;
@@ -133,12 +130,13 @@ button:not(:disabled):active {
 .brand img {
   width: 35px;
   height: 35px;
+  object-fit: contain;
 }
 .brand > span {
-  font-family: Manrope, sans-serif;
+  font-family: Nunito, system-ui, sans-serif;
   font-weight: 800;
   font-size: 29px;
-  letter-spacing: -1.6px;
+  letter-spacing: -0.4px;
 }
 .brand-dot {
   color: #4d88c6;
@@ -174,7 +172,7 @@ button:not(:disabled):active {
   padding: 0 16px;
   width: 100%;
   color: #6b7789;
-  font-size: 13px;
+  font-size: 16px;
   text-align: left;
 }
 .search-trigger > svg {
@@ -183,7 +181,7 @@ button:not(:disabled):active {
 .search-shortcut {
   margin-left: auto;
   padding: 3px 7px;
-  font-size: 10px;
+  font-size: 13px;
   border: 1px solid #dfe5ee;
   border-radius: 5px;
   color: #64748b;
@@ -195,7 +193,7 @@ button:not(:disabled):active {
   margin-left: auto;
 }
 .demo-label {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.4px;
   background: #eff3f7;
@@ -209,14 +207,14 @@ button:not(:disabled):active {
   align-items: center;
   gap: 7px;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 15px;
   color: #64748b;
 }
 .points-button svg {
   color: var(--blue);
 }
 .points-button strong {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--blue);
 }
 .avatar {
@@ -228,7 +226,7 @@ button:not(:disabled):active {
   border-radius: 50%;
   background: #e9edf8;
   color: var(--blue);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   border: 3px solid white;
   box-shadow: 0 0 0 1px #e5eaf3;
@@ -242,7 +240,7 @@ button:not(:disabled):active {
 .avatar.small {
   height: 35px;
   width: 35px;
-  font-size: 11px;
+  font-size: 14px;
   background: #eaf2fc;
   color: #4779aa;
 }
@@ -291,7 +289,7 @@ button:not(:disabled):active {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
   color: #536673;
 }
@@ -333,7 +331,7 @@ button:not(:disabled):active {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 15px;
   filter: drop-shadow(0 2px 3px #223c5b15);
   position: relative;
   height: 36px;
@@ -362,11 +360,11 @@ button:not(:disabled):active {
   padding: 4px 5px;
   background: var(--pale-blue);
   border-radius: 5px;
-  font-size: 11px;
+  font-size: 14px;
 }
 .pin-name {
   font-weight: 700;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.07px;
 }
 .map-pin.selected {
   background: var(--blue);
@@ -388,7 +386,7 @@ button:not(:disabled):active {
   color: white;
   border: 2px solid white;
   font-weight: bold;
-  font-size: 11px;
+  font-size: 14px;
   border-radius: 50%;
   height: 17px;
   width: 17px;
@@ -421,7 +419,7 @@ button:not(:disabled):active {
   align-items: center;
   gap: 6px;
   letter-spacing: 1.25px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   color: #6d7b85;
 }
@@ -434,7 +432,7 @@ button:not(:disabled):active {
   color: var(--blue);
 }
 .explore-intro p {
-  font-size: 12px;
+  font-size: 15px;
   color: #64748b;
   line-height: 1.8;
 }
@@ -451,7 +449,7 @@ button:not(:disabled):active {
   padding: 8px 10px;
   border: 1px solid #e5e9ef;
   border-radius: 8px;
-  font-size: 10px;
+  font-size: 13px;
   color: #617084;
   font-weight: 500;
   white-space: nowrap;
@@ -476,23 +474,23 @@ button:not(:disabled):active {
 .nearby-heading > svg {
   color: #64748b;
 }
-.nearby-heading h2 {
-  font-size: 16px;
+.nearby-heading h1 {
+  font-size: 18px;
   display: flex;
   gap: 8px;
   align-items: center;
 }
-.nearby-heading h2 > span {
+.nearby-heading h1 > span {
   font:
-          500 10px "DM Sans",
-          sans-serif;
+          500 13px Nunito,
+    sans-serif;
   color: #64748b;
   background: #f1f4f8;
   border-radius: 5px;
   padding: 3px 6px;
 }
 .nearby-heading p {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin-top: 5px;
 }
@@ -527,7 +525,7 @@ button:not(:disabled):active {
   min-width: 0;
 }
 .place-category {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -539,9 +537,9 @@ button:not(:disabled):active {
 }
 .place-card-info > strong {
   font:
-          750 14px Manrope,
-          sans-serif;
-  letter-spacing: -0.25px;
+          750 16px Nunito,
+    sans-serif;
+  letter-spacing: -0.08px;
   color: #2d394b;
 }
 .place-rating {
@@ -550,7 +548,7 @@ button:not(:disabled):active {
   gap: 7px;
 }
 .place-rating > span:last-child {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
 }
 .score-badge {
@@ -558,7 +556,7 @@ button:not(:disabled):active {
   align-items: center;
   gap: 3px;
   color: var(--blue);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1;
 }
 .score-mixed {
@@ -572,7 +570,7 @@ button:not(:disabled):active {
   align-items: center;
   gap: 4px;
   color: #64748b;
-  font-size: 11px;
+  font-size: 14px;
 }
 .warning {
   color: #b42332 !important;
@@ -614,19 +612,15 @@ button:not(:disabled):active {
   color: #f9fcff;
   border-radius: 9px 9px 0 0;
   transform: translateY(10px);
-  box-shadow: 10px 5px 0 #d1ddeb;
 }
 .green .art-building {
   background: #91b5df;
-  box-shadow: 10px 5px 0 #cbdcf0;
 }
 .peach .art-building {
   background: #d3b18a;
-  box-shadow: 10px 5px 0 #e5d3bb;
 }
 .lavender .art-building {
   background: #b1a1c8;
-  box-shadow: 10px 5px 0 #d9cde5;
 }
 .art-sun {
   position: absolute;
@@ -675,17 +669,17 @@ button:not(:disabled):active {
   color: #6682ac;
 }
 .community-note strong {
-  font-size: 10px;
+  font-size: 13px;
 }
 .community-note p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   line-height: 1.5;
   margin-top: 4px;
 }
 .demo-caption {
   text-align: center;
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.15px;
   color: #64748b;
   margin: 16px 15px 22px;
@@ -719,7 +713,7 @@ button:not(:disabled):active {
 }
 .detail-title h1 {
   font-size: 25px;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.23px;
 }
 .detail-actions {
   display: flex;
@@ -735,7 +729,7 @@ button:not(:disabled):active {
   width: 16px;
 }
 .address {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   display: flex;
   align-items: center;
@@ -755,19 +749,19 @@ button:not(:disabled):active {
   gap: 7px;
 }
 .score-description {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--green);
 }
 .large-score {
   font-size: 29px;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: -0.33px;
   color: #263750;
   line-height: 1;
 }
 .large-score > span {
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0;
   color: #64748b;
   font-weight: 400;
@@ -789,7 +783,7 @@ button:not(:disabled):active {
   display: flex;
 }
 .review-count {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .detail-tabs {
@@ -800,7 +794,7 @@ button:not(:disabled):active {
   gap: 28px;
 }
 .detail-tabs button {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   color: #64748b;
   padding: 14px 10px;
@@ -834,17 +828,17 @@ button:not(:disabled):active {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .section-heading > span {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
 }
 .section-heading > svg {
   color: #b94b55;
 }
 .section-copy {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin-top: -4px;
   margin-bottom: 13px;
@@ -860,7 +854,7 @@ button:not(:disabled):active {
   background: #fce9eb;
   color: #64748b;
   padding: 3px 6px;
-  font-size: 11px;
+  font-size: 14px;
   border-radius: 4px;
 }
 .live-issues {
@@ -891,11 +885,11 @@ button:not(:disabled):active {
   flex: 1;
 }
 .issue-card strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
 }
 .issue-card small {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .issue-card > svg {
@@ -907,11 +901,11 @@ button:not(:disabled):active {
   justify-content: center;
   gap: 7px;
   width: 100%;
-  border: 1px dashed #e7aab0;
+  border: 1px solid #f4d4d7;
   border-radius: 6px;
   padding: 9px;
   color: #64748b;
-  font-size: 10px;
+  font-size: 13px;
   background: #fffafa;
 }
 .feature-section {
@@ -931,7 +925,7 @@ button:not(:disabled):active {
   border: 1px solid #deebfa;
   border-radius: 6px;
   padding: 8px;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.2;
 }
 .feature-chip svg {
@@ -955,11 +949,11 @@ button:not(:disabled):active {
   color: #6d83a8;
 }
 .contribution-prompt strong {
-  font-size: 10px;
+  font-size: 13px;
   color: #5f6b80;
 }
 .contribution-prompt p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 3px;
 }
@@ -972,7 +966,7 @@ button:not(:disabled):active {
   gap: 8px;
   padding: 12px 18px;
   border-radius: 9px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
 }
 .primary-button {
@@ -992,14 +986,14 @@ button:not(:disabled):active {
   width: 100%;
 }
 .data-note {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   text-align: center;
   line-height: 1.6;
   margin: 12px 0 1px;
 }
 .all-clear {
-  font-size: 10px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -1013,10 +1007,10 @@ button:not(:disabled):active {
   margin: 28px 0 6px;
 }
 .reviews-heading h2 {
-  font-size: 13px;
+  font-size: 16px;
 }
 .reviews-heading span {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
 }
 .review-card {
@@ -1034,10 +1028,10 @@ button:not(:disabled):active {
   gap: 4px;
 }
 .review-author strong {
-  font-size: 11px;
+  font-size: 14px;
 }
 .review-author > div > span {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .review-author > .stars {
@@ -1047,7 +1041,7 @@ button:not(:disabled):active {
   width: 11px;
 }
 .review-card > p {
-  font-size: 11px;
+  font-size: 14px;
   color: #69778b;
   margin: 14px 0;
 }
@@ -1055,7 +1049,7 @@ button:not(:disabled):active {
   margin-top: 8px;
 }
 .review-card .feature-chip {
-  font-size: 10px;
+  font-size: 13px;
   padding: 6px;
 }
 .content-page .main-content {
@@ -1084,11 +1078,11 @@ button:not(:disabled):active {
   background: #f5f7fb;
 }
 .page-header h1 {
-  font-size: 19px;
-  letter-spacing: -0.5px;
+  font-size: 21px;
+  letter-spacing: -0.17px;
 }
 .page-header p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 5px;
 }
@@ -1121,7 +1115,7 @@ button:not(:disabled):active {
   background: none;
   border: 0;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 16px;
   height: 100%;
   outline-offset: 5px;
 }
@@ -1142,7 +1136,7 @@ button:not(:disabled):active {
   width: 100%;
   border-bottom: 1px solid #f0f3f7;
   text-align: left;
-  font-size: 12px;
+  font-size: 15px;
 }
 .recent-search > span {
   flex: 1;
@@ -1164,7 +1158,7 @@ button:not(:disabled):active {
   padding: 45px 10px;
   text-align: center;
   color: #64748b;
-  font-size: 12px;
+  font-size: 15px;
 }
 .empty-state h3 {
   margin: 12px 0 6px;
@@ -1187,10 +1181,10 @@ button:not(:disabled):active {
 .review-intro h2 {
   font-size: 24px;
   line-height: 1.35;
-  letter-spacing: -0.8px;
+  letter-spacing: -0.27px;
 }
 .review-intro p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 10px;
 }
@@ -1207,7 +1201,7 @@ fieldset {
   margin-bottom: 28px;
 }
 .rating-fieldset legend {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   width: 100%;
 }
@@ -1243,7 +1237,7 @@ fieldset {
   outline-offset: 3px;
 }
 .rating-fieldset p {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .feature-fieldset {
@@ -1251,11 +1245,11 @@ fieldset {
 }
 .feature-fieldset legend {
   font:
-          700 15px Manrope,
-          sans-serif;
+          700 17px Nunito,
+    sans-serif;
 }
 .feature-fieldset > p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin: 6px 0 13px;
 }
@@ -1273,7 +1267,7 @@ fieldset {
   min-height: 48px;
   border-radius: 8px;
   text-align: left;
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .feature-option > span:not(.checkbox) {
@@ -1312,13 +1306,13 @@ fieldset {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   margin: 20px 0 10px;
 }
 .text-label > span {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 textarea,
@@ -1329,7 +1323,7 @@ select {
   background: #fbfcfe;
   color: #3e4f68;
   padding: 13px;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.7;
 }
 textarea {
@@ -1345,7 +1339,7 @@ select {
 .character-count {
   text-align: right;
   color: #64748b;
-  font-size: 11px;
+  font-size: 14px;
   margin: 6px 0 22px;
 }
 .achievement-hero {
@@ -1362,7 +1356,7 @@ select {
 .achievement-hero > .eyebrow {
   justify-content: center;
   color: #adc6f2;
-  font-size: 10px;
+  font-size: 13px;
   margin: 15px 0 10px;
 }
 .achievement-hero > svg {
@@ -1371,18 +1365,18 @@ select {
 .achievement-hero h2 {
   font-size: 40px;
   line-height: 1.15;
-  letter-spacing: -1px;
+  letter-spacing: -0.33px;
 }
 .achievement-hero h2 > span {
   display: block;
-  font-size: 11px;
-  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-family: Nunito, system-ui, sans-serif;
   letter-spacing: 0;
   font-weight: 400;
   margin-top: 7px;
 }
 .achievement-hero > p {
-  font-size: 10px;
+  font-size: 13px;
   color: #b0c7ec;
   margin-top: 17px;
 }
@@ -1433,11 +1427,11 @@ select {
   flex: 1;
 }
 .achievement-info h3 {
-  font-size: 13px;
+  font-size: 16px;
   color: #778295;
 }
 .achievement-info p {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin-top: 5px;
 }
@@ -1474,7 +1468,7 @@ select {
   color: white;
 }
 .unlocked-label {
-  font-size: 11px;
+  font-size: 14px;
   color: #477fb9;
   display: flex;
   align-items: center;
@@ -1495,7 +1489,7 @@ select {
 }
 .progress-count {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin-top: 5px;
   text-align: right;
@@ -1510,15 +1504,15 @@ select {
   margin-bottom: 30px;
 }
 .preview-note strong {
-  font-size: 12px;
+  font-size: 15px;
 }
 .preview-note p {
-  font-size: 11px;
+  font-size: 14px;
   color: #7a8ba6;
   margin-top: 6px;
 }
 .settings-page .page-body > h2 {
-  font-size: 13px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 .settings-row {
@@ -1534,14 +1528,14 @@ select {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 12px;
+  font-size: 15px;
 }
 .settings-row strong {
   color: #56667c;
   font-weight: 500;
 }
 .settings-row span {
-  font-size: 10px;
+  font-size: 13px;
 }
 .settings-footer {
   padding: 35px;
@@ -1550,19 +1544,20 @@ select {
 .settings-footer img {
   width: 33px;
   height: 33px;
+  object-fit: contain;
   display: block;
   margin: 0 auto 10px;
 }
 .settings-footer strong {
-  font-size: 17px;
+  font-size: 19px;
 }
 .settings-footer p {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin: 7px 0 5px;
 }
 .settings-footer span {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
 }
 .modal-backdrop {
@@ -1595,22 +1590,22 @@ select {
   padding: 16px 22px;
 }
 .modal-header h2 {
-  font-size: 16px;
+  font-size: 18px;
 }
 .modal-body {
   padding: 24px;
 }
 .modal-body > h3 {
-  font-size: 20px;
+  font-size: 22px;
   margin: 0 0 12px;
 }
 .modal-body p {
-  font-size: 12px;
+  font-size: 15px;
   color: #64748b;
 }
 .modal-body > h4 {
   margin: 26px 0 6px;
-  font-size: 15px;
+  font-size: 17px;
 }
 .modal-body .round-illustration.warning {
   background: #ffeaec;
@@ -1627,7 +1622,7 @@ select {
   gap: 7px;
   margin-top: 17px;
   color: #64748b;
-  font-size: 10px;
+  font-size: 13px;
 }
 .modal-body form > .primary-button {
   margin-top: 20px;
@@ -1652,10 +1647,10 @@ select {
 }
 .profile-card h2 {
   margin-top: 16px;
-  font-size: 20px;
+  font-size: 22px;
 }
 .profile-card > p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 6px;
 }
@@ -1670,10 +1665,10 @@ select {
   justify-content: center;
   gap: 7px;
   color: #5f78a8;
-  font-size: 10px;
+  font-size: 13px;
 }
 .profile-points strong {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--blue);
 }
 .drawer-nav {
@@ -1688,7 +1683,7 @@ select {
   gap: 12px;
   text-align: left;
   padding: 14px 6px;
-  font-size: 12px;
+  font-size: 15px;
   color: #64758f;
   border-radius: 7px;
 }
@@ -1710,7 +1705,7 @@ select {
   margin-top: 12px;
 }
 .drawer-message p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 13px;
 }
@@ -1747,7 +1742,7 @@ select {
   color: #b8d9ff;
 }
 .toast > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
 }
 .toast .icon-button {
@@ -1767,7 +1762,7 @@ select {
   border: 1px solid #f0cccc;
   border-radius: 9px;
   padding: 13px;
-  font-size: 12px;
+  font-size: 15px;
   margin: 12px 0;
 }
 .error-message button {
@@ -1786,18 +1781,19 @@ select {
 .boot-screen > img {
   width: 55px;
   height: 55px;
+  object-fit: contain;
 }
 .boot-screen h1 {
   font-size: 27px;
 }
 .boot-screen > p {
-  font-size: 12px;
+  font-size: 15px;
   color: #64748b;
 }
 .loading-panel {
   padding: 40px;
   color: #64748b;
-  font-size: 13px;
+  font-size: 16px;
 }
 .sheet-handle {
   display: none;
@@ -1819,6 +1815,44 @@ select {
   to {
     transform: translateX(0);
   }
+}
+
+/* Finishing touches */
+.explore-intro h1 {
+  margin-top: 0;
+}
+.search-trigger,
+.category,
+.feature-chip,
+.map-pin,
+.map-status {
+  border-radius: 999px;
+}
+.category {
+  padding: 8px 14px 8px 12px;
+}
+.map-pin {
+  padding-left: 6px;
+  padding-right: 12px;
+}
+.map-pin:after {
+  bottom: -4px;
+  width: 8px;
+  height: 8px;
+}
+.pin-score {
+  border-radius: 999px;
+  padding: 4px 7px;
+}
+.primary-button,
+.secondary-button,
+.report-button {
+  border-radius: 12px;
+}
+.place-art,
+.achievement-hero,
+.live-issues {
+  border-radius: 14px;
 }
 
 @media (min-width: 1200px) {
@@ -1923,10 +1957,10 @@ select {
     padding-right: 24px;
   }
   .category {
-    font-size: 11px;
+    font-size: 14px;
   }
   .place-card-info > strong {
-    font-size: 13px;
+    font-size: 16px;
   }
   .header-right .points-button > span {
     display: none;
@@ -1954,7 +1988,7 @@ select {
     gap: 9px;
     pointer-events: auto;
   }
-  .header-search > .icon-button {
+  .app-header .menu-button {
     background: white;
     box-shadow: 0 2px 12px #283a4f18;
     border: 1px solid #e5e9ee;
@@ -1968,7 +2002,7 @@ select {
     border-color: #e1e6ec;
     height: 45px;
     padding: 0 15px;
-    font-size: 12px;
+    font-size: 15px;
     gap: 9px;
   }
   .search-shortcut {
@@ -1983,7 +2017,7 @@ select {
   .map-status {
     left: 17px;
     top: 137px;
-    font-size: 11px;
+    font-size: 14px;
     padding: 8px 10px;
     border-radius: 7px;
   }
@@ -2047,9 +2081,9 @@ select {
     display: none;
   }
   .explore-intro h1 {
-    font-size: 20px;
+    font-size: 22px;
     margin: 0;
-    letter-spacing: -0.7px;
+    letter-spacing: -0.23px;
     line-height: 1.35;
   }
   .explore-intro h1 > span {
@@ -2070,7 +2104,7 @@ select {
   .category {
     background: #fffffff5;
     box-shadow: 0 2px 8px #25394f0a;
-    font-size: 10px;
+    font-size: 13px;
     padding: 8px 12px;
     border-radius: 18px;
     min-height: 34px;
@@ -2082,14 +2116,14 @@ select {
     padding: 1px 23px 3px;
     border: 0;
   }
-  .nearby-heading h2 {
-    font-size: 11px;
+  .nearby-heading h1 {
+    font-size: 14px;
     font-weight: 500;
     color: #8690a0;
     letter-spacing: 0;
   }
-  .nearby-heading h2 > span {
-    font-size: 10px;
+  .nearby-heading h1 > span {
+    font-size: 13px;
   }
   .nearby-heading p,
   .nearby-heading > svg {
@@ -2107,14 +2141,14 @@ select {
     height: 83px;
   }
   .place-card-info > strong {
-    font-size: 14px;
+    font-size: 16px;
   }
   .place-category {
-    font-size: 10px;
+    font-size: 13px;
   }
   .place-rating > span:last-child,
   .place-note {
-    font-size: 11px;
+    font-size: 14px;
   }
   .community-note {
     margin-left: 23px;
@@ -2139,7 +2173,7 @@ select {
     gap: 5px;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 14px;
     color: #64748b;
   }
   .mobile-nav button.active {
@@ -2174,7 +2208,7 @@ select {
     margin-top: 4px;
   }
   .detail-top > .place-category {
-    font-size: 11px;
+    font-size: 14px;
   }
   .detail-title {
     margin-top: 9px;
@@ -2191,7 +2225,7 @@ select {
     width: 17px;
   }
   .address {
-    font-size: 10px;
+    font-size: 13px;
   }
   .location-summary {
     margin-top: 19px;
@@ -2202,10 +2236,10 @@ select {
     height: 106px;
   }
   .score-description {
-    font-size: 11px;
+    font-size: 14px;
   }
   .review-count {
-    font-size: 11px;
+    font-size: 14px;
   }
   .detail-tabs {
     margin-left: -23px;
@@ -2214,41 +2248,41 @@ select {
     padding-right: 23px;
   }
   .detail-tabs button {
-    font-size: 13px;
+    font-size: 16px;
   }
   .detail-content {
     padding-top: 23px;
   }
   .section-heading h2 {
-    font-size: 15px;
+    font-size: 17px;
   }
   .section-heading > span {
-    font-size: 11px;
+    font-size: 14px;
   }
   .section-copy {
-    font-size: 11px;
+    font-size: 14px;
   }
   .issue-card {
     min-height: 52px;
   }
   .issue-card strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .issue-card small {
-    font-size: 11px;
+    font-size: 14px;
   }
   .report-button {
     min-height: 42px;
-    font-size: 11px;
+    font-size: 14px;
   }
   .feature-chip {
-    font-size: 10px;
+    font-size: 13px;
     padding: 9px;
   }
   .primary-button,
   .secondary-button {
     min-height: 48px;
-    font-size: 13px;
+    font-size: 16px;
   }
   .has-detail .map-status {
     top: 89px;
@@ -2285,7 +2319,7 @@ select {
     font-size: 18px;
   }
   .page-header p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .page-body {
     padding: 23px;
@@ -2298,17 +2332,17 @@ select {
     padding: 0 10px;
   }
   .search-field input {
-    font-size: 12px;
+    font-size: 15px;
   }
   .search-page .page-body {
     padding: 23px 20px;
   }
   .search-page .section-heading > span {
-    font-size: 10px;
+    font-size: 13px;
   }
   .search-page .recent-search {
     padding: 19px 3px;
-    font-size: 13px;
+    font-size: 16px;
     min-height: 55px;
   }
   .review-intro {
@@ -2318,22 +2352,22 @@ select {
     font-size: 25px;
   }
   .review-intro p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .rating-fieldset legend {
-    font-size: 13px;
-  }
-  .rating-fieldset p {
-    font-size: 11px;
-  }
-  .feature-fieldset legend {
     font-size: 16px;
   }
+  .rating-fieldset p {
+    font-size: 14px;
+  }
+  .feature-fieldset legend {
+    font-size: 18px;
+  }
   .feature-fieldset > p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .feature-option {
-    font-size: 11px;
+    font-size: 14px;
     gap: 7px;
     padding: 12px 9px;
   }
@@ -2345,17 +2379,17 @@ select {
     height: 14px;
   }
   .text-label {
-    font-size: 13px;
+    font-size: 16px;
   }
   textarea,
   select {
-    font-size: 16px;
+    font-size: 18px;
   }
   .character-count {
-    font-size: 10px;
+    font-size: 13px;
   }
   .data-note {
-    font-size: 10px;
+    font-size: 13px;
   }
   .achievement-hero {
     padding: 30px 15px;
@@ -2365,10 +2399,10 @@ select {
     gap: 12px;
   }
   .achievement-info h3 {
-    font-size: 13px;
+    font-size: 16px;
   }
   .achievement-info p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .achievement-badge {
     width: 48px;
@@ -2389,7 +2423,7 @@ select {
     padding: 22px;
   }
   .modal-body p {
-    font-size: 13px;
+    font-size: 16px;
   }
   .drawer-backdrop {
     padding: 0;
@@ -2406,19 +2440,19 @@ select {
     gap: 10px;
   }
   .toast p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .review-card > p {
-    font-size: 12px;
+    font-size: 15px;
   }
   .review-author strong {
-    font-size: 12px;
+    font-size: 15px;
   }
   .review-author > div > span {
-    font-size: 11px;
+    font-size: 14px;
   }
   .review-card .feature-chip {
-    font-size: 11px;
+    font-size: 14px;
   }
   .content-page .main-content > .error-message {
     margin: 20px;
@@ -2427,10 +2461,10 @@ select {
     flex-wrap: wrap;
   }
   .contribution-prompt strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .contribution-prompt p {
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 @media (max-width: 360px) {
@@ -2450,7 +2484,7 @@ select {
     padding: 20px;
   }
   .issue-card strong {
-    font-size: 10px;
+    font-size: 13px;
   }
 
 }
@@ -2461,5 +2495,1222 @@ select {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   Pastel palette — bright, friendly, easy to spot
+   ========================================================= */
+:root {
+  --blue: #2f6fe4;
+  --blue-dark: #1f56c4;
+  --ink: #23283a;
+  --muted: #6b7085;
+  --line: #ece7f3;
+  --pale-blue: #e4efff;
+  --cream: #fffaf4;
+
+  --sky: #dcebff;
+  --sky-ink: #2f6fe4;
+  --mint: #d9f6e6;
+  --mint-ink: #1a7a4b;
+  --peach: #ffe4d2;
+  --peach-ink: #b34d1c;
+  --butter: #fff1bd;
+  --butter-ink: #8f6a00;
+  --lilac: #ebe2ff;
+  --lilac-ink: #6c4fd3;
+  --rose: #ffe0e7;
+  --rose-ink: #c8304f;
+  --gold: #f7b500;
+
+  color: var(--ink);
+  background: var(--cream);
+}
+
+/* ---- Shell ---- */
+.app-header {
+  background: white;
+  border-bottom: 3px solid var(--sky);
+}
+.brand > span {
+  color: var(--blue);
+}
+.search-trigger {
+  background: var(--cream);
+  border-color: #f0e6da;
+}
+.search-trigger:hover {
+  background: #fff3e6;
+}
+.search-trigger > svg {
+  color: var(--blue);
+}
+.icon-button:hover {
+  background: var(--sky);
+}
+.points-button {
+  background: var(--butter);
+  color: var(--butter-ink);
+  padding: 7px 13px;
+  border-radius: 999px;
+}
+.points-button:hover {
+  background: #ffe993;
+}
+.points-button svg,
+.points-button strong {
+  color: var(--butter-ink);
+}
+.avatar {
+  background: var(--lilac);
+  color: var(--lilac-ink);
+  box-shadow: 0 0 0 2px #d9cbff;
+}
+.avatar.small {
+  background: var(--mint);
+  color: var(--mint-ink);
+}
+.content-page .main-content {
+  background: var(--cream);
+}
+.explore-panel,
+.detail-panel {
+  border-right-color: var(--line);
+}
+.leaflet-tile-pane {
+  filter: saturate(0.75) brightness(1.04);
+}
+
+/* ---- Explore ---- */
+.explore-intro h1 > span {
+  color: var(--blue);
+}
+.category {
+  border-color: transparent;
+  font-weight: 700;
+  color: var(--ink);
+}
+.category-list .category:nth-child(1) {
+  background: var(--sky);
+  --chip-ink: var(--sky-ink);
+}
+.category-list .category:nth-child(2) {
+  background: var(--peach);
+  --chip-ink: var(--peach-ink);
+}
+.category-list .category:nth-child(3) {
+  background: var(--lilac);
+  --chip-ink: var(--lilac-ink);
+}
+.category-list .category:nth-child(4) {
+  background: var(--butter);
+  --chip-ink: var(--butter-ink);
+}
+.category-list .category:nth-child(5) {
+  background: var(--mint);
+  --chip-ink: var(--mint-ink);
+}
+.category-list .category:nth-child(6) {
+  background: var(--rose);
+  --chip-ink: var(--rose-ink);
+}
+.category svg {
+  color: var(--chip-ink);
+}
+.category:hover {
+  border-color: var(--chip-ink);
+}
+.category-list .category.active {
+  background: var(--chip-ink);
+  border-color: var(--chip-ink);
+  color: white;
+  box-shadow: 0 4px 12px #23283a1f;
+}
+.category.active svg {
+  color: white;
+}
+.nearby-heading h1 > span {
+  background: var(--sky);
+  color: var(--blue);
+  border-radius: 999px;
+  padding: 3px 9px;
+}
+.place-card:hover {
+  background: #fff6ec;
+}
+.community-note {
+  background: var(--butter);
+}
+.community-icon {
+  color: var(--butter-ink);
+}
+.community-note strong {
+  color: #5e4600;
+}
+.community-note p {
+  color: #7a5d10;
+}
+
+/* Place pictures: one pastel per place */
+.place-art {
+  background: var(--sky);
+}
+.art-building {
+  background: #8fb8ff;
+  color: white;
+}
+.place-art.green {
+  background: var(--mint);
+}
+.green .art-building {
+  background: #6fd3a0;
+}
+.place-art.peach {
+  background: var(--peach);
+}
+.peach .art-building {
+  background: #ffa875;
+}
+.place-art.lavender {
+  background: var(--lilac);
+}
+.lavender .art-building {
+  background: #a990f5;
+}
+
+/* ---- Ratings ---- */
+.stars,
+.rating-input label.chosen {
+  color: var(--gold);
+}
+.score-badge {
+  color: var(--blue);
+}
+.score-description {
+  color: var(--mint-ink);
+}
+
+/* ---- Map ---- */
+.map-pin {
+  color: var(--ink);
+  box-shadow: 0 4px 12px #23283a29;
+}
+.pin-score {
+  background: var(--sky);
+  color: var(--blue);
+}
+.map-pin.selected {
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 5px #2f6fe433;
+}
+.map-pin.selected:after {
+  background: var(--blue);
+}
+.map-pin.selected .pin-score {
+  background: #ffffff33;
+  color: white;
+}
+.pin-alert {
+  background: var(--rose-ink);
+}
+.status-dot {
+  background: var(--mint-ink);
+}
+.map-controls .icon-button {
+  color: var(--blue);
+}
+
+/* ---- Place details ---- */
+.detail-top .icon-button,
+.detail-actions .icon-button {
+  background: var(--sky);
+  color: var(--blue);
+}
+.detail-tabs button[aria-selected="true"] {
+  color: var(--blue);
+}
+.detail-tabs button[aria-selected="true"]:after {
+  background: var(--blue);
+}
+.live-dot {
+  background: var(--rose-ink);
+  box-shadow: 0 0 0 3px var(--rose);
+}
+.count-pill {
+  background: var(--rose);
+  color: var(--rose-ink);
+  font-weight: 700;
+}
+.live-issues {
+  background: #fff3f6;
+  border-color: #ffd3dd;
+}
+.issue-card {
+  color: #a42c48;
+}
+.issue-icon {
+  background: var(--rose);
+  color: var(--rose-ink);
+}
+.report-button {
+  background: white;
+  border-color: #ffc9d5;
+  color: var(--rose-ink);
+  font-weight: 700;
+}
+.report-button:hover {
+  background: var(--rose);
+}
+.feature-chip {
+  background: var(--mint);
+  border-color: transparent;
+  color: #17643f;
+}
+.feature-chip svg {
+  color: var(--mint-ink);
+}
+.feature-chip.obstacle {
+  background: var(--peach);
+  border-color: transparent;
+  color: #9a4318;
+}
+.feature-chip.obstacle svg {
+  color: var(--peach-ink);
+}
+.section-heading > svg {
+  color: var(--peach-ink);
+}
+.all-clear {
+  color: var(--mint-ink);
+}
+.contribution-prompt {
+  color: var(--lilac-ink);
+}
+
+/* ---- Buttons ---- */
+.primary-button {
+  background: var(--blue);
+  box-shadow: 0 6px 16px #2f6fe440;
+}
+.primary-button:hover {
+  background: var(--blue-dark);
+}
+.secondary-button {
+  background: var(--sky);
+  border-color: transparent;
+  color: var(--blue);
+}
+.secondary-button:hover {
+  background: #cbe0ff;
+}
+
+/* ---- Pages & forms ---- */
+.page-header .icon-button {
+  background: var(--sky);
+  color: var(--blue);
+}
+.round-illustration {
+  background: var(--lilac);
+  color: var(--lilac-ink);
+}
+.modal-body .round-illustration.warning {
+  background: var(--rose);
+  color: var(--rose-ink);
+}
+.feature-option.checked {
+  background: var(--mint);
+  border-color: #6fd3a0;
+  color: #17643f;
+}
+.feature-option.checked .checkbox {
+  background: var(--mint-ink);
+  border-color: var(--mint-ink);
+}
+.feature-option.obstacle.checked {
+  background: var(--peach);
+  border-color: #ffa875;
+  color: #9a4318;
+}
+.feature-option.obstacle.checked .checkbox {
+  background: var(--peach-ink);
+  border-color: var(--peach-ink);
+}
+textarea,
+select {
+  background: white;
+  border-color: #e6dff0;
+}
+textarea:focus,
+select:focus {
+  border-color: var(--blue);
+}
+.search-field {
+  background: var(--cream);
+  border-color: #f0e6da;
+}
+.preview-note {
+  background: var(--butter);
+  color: var(--butter-ink);
+}
+.preview-note p {
+  color: #7a5d10;
+}
+
+/* ---- Achievements ---- */
+.achievement-hero {
+  background: var(--lilac);
+  color: #3f2b8f;
+}
+.achievement-hero h2 {
+  color: #3f2b8f;
+}
+.achievement-hero > svg {
+  color: var(--gold);
+}
+.achievement-hero > .eyebrow,
+.achievement-hero > p {
+  color: #5a4a8a;
+}
+.achievement-card.unlocked {
+  background: white;
+  border-color: var(--line);
+}
+.unlocked .achievement-badge {
+  background: var(--mint);
+  color: var(--mint-ink);
+}
+.unlocked:nth-child(2n) .achievement-badge {
+  background: var(--lilac);
+  color: var(--lilac-ink);
+}
+.achievement-badge > span {
+  background: var(--mint-ink);
+}
+.unlocked .achievement-info h3 {
+  color: var(--ink);
+}
+.unlocked-label {
+  color: var(--mint-ink);
+}
+.progress-track {
+  background: #f1ecf8;
+}
+.progress-track > span {
+  background: var(--lilac-ink);
+}
+
+/* ---- Drawer, toast, nav ---- */
+.profile-points {
+  background: var(--butter);
+  color: var(--butter-ink);
+}
+.profile-points strong {
+  color: var(--butter-ink);
+}
+.drawer-nav > button:hover {
+  background: var(--sky);
+}
+.drawer-nav > button > svg:first-child {
+  color: var(--blue);
+}
+.drawer-message {
+  background: var(--lilac);
+  border-top: 0;
+  border-radius: 16px;
+  padding: 20px;
+  color: var(--lilac-ink);
+}
+.drawer-message h3 {
+  color: #3f2b8f;
+}
+.drawer-message p {
+  color: #5a4a8a;
+}
+.toast {
+  background: #2a3a6b;
+}
+.toast > span {
+  color: var(--butter);
+}
+.mobile-nav button.active {
+  color: var(--blue);
+}
+.mobile-nav button.active > svg {
+  background: var(--sky);
+  border-radius: 999px;
+  padding: 3px 14px;
+  box-sizing: content-box;
+}
+@media (max-width: 760px) {
+  .app-header {
+    background: transparent;
+    border-bottom: 0;
+  }
+  .app-header .menu-button,
+  .search-trigger {
+    background: white;
+  }
+  .category-list .category:not(.active) {
+    box-shadow: 0 2px 8px #23283a14;
+  }
+}
+
+/* =========================================================
+   Soft cards, blue navbar, aqua instead of yellow
+   ========================================================= */
+:root {
+  /* aqua replaces the old butter yellow everywhere it was used */
+  --butter: #d2f4ef;
+  --butter-ink: #0f7468;
+  --aqua: #d2f4ef;
+  --aqua-ink: #0f7468;
+  --panel: #f2f7ff;
+  --soft-shadow: 0 2px 12px #2f6fe414;
+  --lift-shadow: 0 8px 22px #2f6fe421;
+}
+
+/* ---- Navbar: brand blue, white search bar ---- */
+.app-header {
+  background: var(--blue);
+  border-bottom: 0;
+  box-shadow: 0 2px 10px #1f56c433;
+}
+.brand img {
+  filter: brightness(0) invert(1);
+}
+.brand > span {
+  color: white;
+}
+.app-header .menu-button {
+  color: white;
+}
+.app-header .menu-button:hover {
+  background: #ffffff26;
+}
+.search-trigger {
+  background: white;
+  border: 0;
+  color: var(--muted);
+  box-shadow: 0 2px 8px #0f2a6b26;
+}
+.search-trigger:hover {
+  background: white;
+  box-shadow: 0 4px 14px #0f2a6b40;
+}
+.points-button {
+  background: var(--aqua);
+  color: var(--aqua-ink);
+}
+.points-button:hover {
+  background: #b9ece4;
+}
+.app-header .avatar {
+  background: white;
+  color: var(--blue);
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #ffffff66;
+}
+
+/* ---- No borders on cards: colour + soft shadow instead ---- */
+.explore-panel {
+  background: var(--panel);
+  border-right: 0;
+}
+.detail-panel {
+  border-right: 0;
+  box-shadow: 4px 0 18px #2f6fe412;
+}
+.nearby-heading {
+  border-top: 0;
+}
+.places-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.place-card {
+  background: white;
+  border: 0;
+  border-radius: 18px;
+  padding: 12px 14px 12px 12px;
+  box-shadow: var(--soft-shadow);
+}
+.place-card:last-child {
+  border-bottom: 0;
+}
+.place-card:hover {
+  background: white;
+  box-shadow: var(--lift-shadow);
+  transform: translateY(-1px);
+}
+.category,
+.feature-chip,
+.feature-chip.obstacle,
+.live-issues,
+.report-button,
+.secondary-button,
+.map-status,
+.map-controls,
+.map-pin,
+.error-message {
+  border: 0;
+}
+.map-status,
+.map-controls {
+  box-shadow: 0 4px 16px #23283a1f;
+}
+.report-button {
+  background: var(--rose);
+}
+.report-button:hover {
+  background: #ffd0dc;
+}
+.detail-tabs {
+  border-bottom: 0;
+  background: var(--panel);
+  border-radius: 14px;
+  margin: 0;
+  padding: 4px;
+  gap: 4px;
+}
+.detail-tabs button {
+  border-radius: 11px;
+  padding: 11px 10px;
+}
+.detail-tabs button[aria-selected="true"] {
+  background: white;
+  box-shadow: var(--soft-shadow);
+}
+.detail-tabs button[aria-selected="true"]:after {
+  display: none;
+}
+.review-card {
+  border-bottom: 0;
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+/* Content pages */
+.standalone-page {
+  border: 0;
+  box-shadow: 0 6px 30px #2f6fe414;
+}
+.page-header,
+.search-page-header,
+.modal-header {
+  border-bottom: 0;
+  background: var(--panel);
+}
+.search-field {
+  background: white;
+  border: 0;
+  box-shadow: var(--soft-shadow);
+}
+.recent-search {
+  border-bottom: 0;
+  border-radius: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.recent-search:hover {
+  background: var(--panel);
+}
+.rating-fieldset {
+  border-bottom: 0;
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 22px 16px;
+}
+.feature-option {
+  border: 0;
+  background: var(--panel);
+  color: var(--ink);
+}
+.feature-option:hover {
+  background: #e4eeff;
+}
+.checkbox {
+  border: 0;
+  background: white;
+  box-shadow: inset 0 0 0 1.5px #c9d6ee;
+}
+.feature-option.checked .checkbox,
+.feature-option.obstacle.checked .checkbox {
+  box-shadow: none;
+}
+textarea,
+select {
+  border: 0;
+  background: var(--panel);
+}
+textarea:focus,
+select:focus {
+  background: white;
+  box-shadow: 0 0 0 2px var(--blue);
+}
+.achievement-card,
+.achievement-card.unlocked {
+  border: 0;
+  background: white;
+  box-shadow: var(--soft-shadow);
+}
+.achievement-card.locked {
+  background: #f7f8fc;
+  box-shadow: none;
+}
+.settings-row {
+  border-bottom: 0;
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+.drawer-message {
+  border-top: 0;
+}
+
+/* ---- Aqua accents (formerly yellow) ---- */
+.community-note {
+  background: var(--aqua);
+}
+.community-icon {
+  color: var(--aqua-ink);
+}
+.community-note strong {
+  color: #0a5a51;
+}
+.community-note p {
+  color: #2f6f68;
+}
+.preview-note {
+  background: var(--aqua);
+  color: var(--aqua-ink);
+}
+.preview-note p {
+  color: #2f6f68;
+}
+.profile-points,
+.profile-points strong {
+  background: var(--aqua);
+  color: var(--aqua-ink);
+}
+.profile-points strong {
+  background: none;
+}
+.toast > span {
+  color: #8ee6d9;
+}
+
+/* ---- Mobile ---- */
+.mobile-nav {
+  background: var(--blue);
+  border-top: 0;
+  box-shadow: 0 -4px 16px #1f56c433;
+}
+.mobile-nav button {
+  color: #ffffffbf;
+}
+.mobile-nav button.active {
+  color: white;
+}
+.mobile-nav button.active > svg {
+  background: #ffffff33;
+}
+@media (max-width: 760px) {
+  .app-header {
+    background: transparent;
+    box-shadow: none;
+  }
+  .app-header .menu-button {
+    color: var(--ink);
+    background: white;
+    border: 0;
+  }
+  .search-trigger {
+    box-shadow: 0 2px 12px #23283a24;
+  }
+  .explore-panel {
+    border: 0;
+  }
+  .detail-tabs {
+    margin: 0;
+  }
+  .page-header {
+    background: var(--panel);
+  }
+}
+
+/* =========================================================
+   Calmer palette: blue + aqua accent, rose for problems
+   ========================================================= */
+
+/* Menu button sits left of the logo */
+.app-header .menu-button {
+  margin-right: -16px;
+}
+@media (min-width: 1200px) {
+  .brand {
+    min-width: 261px;
+  }
+}
+
+/* Category filters: one neutral style, blue when selected */
+.category-list .category:nth-child(n) {
+  background: white;
+  color: var(--ink);
+  --chip-ink: var(--blue);
+  box-shadow: 0 1px 4px #23283a14;
+}
+.category-list .category:nth-child(n):hover {
+  background: var(--sky);
+}
+.category-list .category.active {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 4px 12px #2f6fe440;
+}
+
+/* Place pictures: one soft blue for all */
+.place-art,
+.place-art.green,
+.place-art.peach,
+.place-art.lavender {
+  background: var(--sky);
+}
+.art-building,
+.green .art-building,
+.peach .art-building,
+.lavender .art-building {
+  background: #8fb8ff;
+}
+
+/* Helpful features in blue, problems in rose */
+.feature-chip {
+  background: var(--sky);
+  color: #1f4fa8;
+}
+.feature-chip svg {
+  color: var(--blue);
+}
+.feature-chip.obstacle {
+  background: var(--rose);
+  color: #9e2440;
+}
+.feature-chip.obstacle svg,
+.section-heading > svg {
+  color: var(--rose-ink);
+}
+.feature-option.checked {
+  background: var(--sky);
+  color: #1f4fa8;
+}
+.feature-option.checked .checkbox {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+.feature-option.obstacle.checked {
+  background: var(--rose);
+  color: #9e2440;
+}
+.feature-option.obstacle.checked .checkbox {
+  background: var(--rose-ink);
+  border-color: var(--rose-ink);
+}
+
+/* Everything that was lilac, mint or peach goes blue */
+.avatar,
+.avatar.small,
+.drawer-body .avatar.big {
+  background: var(--sky);
+  color: var(--blue);
+  box-shadow: none;
+}
+.app-header .avatar {
+  background: white;
+  color: var(--blue);
+}
+.round-illustration {
+  background: var(--sky);
+  color: var(--blue);
+}
+.score-description,
+.unlocked-label {
+  color: var(--blue);
+}
+.contribution-prompt {
+  color: var(--blue);
+}
+.drawer-message {
+  background: var(--panel);
+  color: var(--blue);
+}
+.drawer-message h3 {
+  color: var(--ink);
+}
+.drawer-message p {
+  color: var(--muted);
+}
+.achievement-hero {
+  background: var(--blue);
+  color: white;
+}
+.achievement-hero h2 {
+  color: white;
+}
+.achievement-hero > svg {
+  color: white;
+}
+.achievement-hero > .eyebrow,
+.achievement-hero > p {
+  color: #dbe8ff;
+}
+.unlocked .achievement-badge,
+.unlocked:nth-child(2n) .achievement-badge {
+  background: var(--sky);
+  color: var(--blue);
+}
+.achievement-badge > span {
+  background: var(--blue);
+}
+.progress-track > span {
+  background: var(--blue);
+}
+
+/* Mobile: the menu button floats next to the search bar */
+@media (max-width: 760px) {
+  .app-header {
+    gap: 9px;
+  }
+  .app-header .menu-button {
+    margin-right: 0;
+    pointer-events: auto;
+    color: var(--ink);
+    background: white;
+  }
+}
+
+/* =========================================================
+   Mobile polish + collapsible places sheet
+   ========================================================= */
+html,
+body {
+  overscroll-behavior: none;
+}
+.sheet-toggle {
+  display: none;
+}
+
+/* Selected filter: bright and obvious (and not washed out by a sticky hover on touch) */
+.category-list .category:nth-child(n):hover {
+  background: white;
+}
+@media (hover: hover) {
+  .category-list .category:nth-child(n):hover {
+    background: var(--sky);
+  }
+}
+.category-list .category.active:nth-child(n),
+.category-list .category.active:nth-child(n):hover {
+  background: var(--blue);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 4px 14px #2f6fe466;
+}
+.category-list .category.active svg {
+  color: white;
+}
+
+@media (max-width: 760px) {
+  /* Top bar: menu + search, both 48px tall */
+  .app-header {
+    height: 80px;
+    padding: 16px 16px 0;
+    align-items: flex-start;
+  }
+  .app-header .menu-button {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    box-shadow: 0 2px 12px #23283a24;
+  }
+  .search-trigger {
+    height: 48px;
+    font-size: 15px;
+    padding: 0 18px;
+  }
+
+  /* Filter chips: one tidy row under the search bar */
+  .category-list {
+    top: 76px;
+    padding: 0 16px 8px;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .category {
+    pointer-events: auto;
+    min-height: 40px;
+    padding: 9px 15px 9px 13px;
+    font-size: 14px;
+  }
+  .category svg {
+    width: 16px;
+  }
+
+  /* Map overlays line up on the same row, with big tap targets */
+  .map-status {
+    top: 130px;
+    left: 16px;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  .map-controls {
+    top: 130px;
+    right: 16px;
+    padding: 4px;
+    border-radius: 14px;
+  }
+  .map-controls .icon-button {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+  .map-controls .icon-button svg {
+    width: 20px;
+  }
+  .has-detail .map-status,
+  .has-detail .map-controls {
+    top: 80px;
+  }
+
+  /* Bottom nav */
+  .mobile-nav {
+    height: 72px;
+  }
+  .mobile-nav button {
+    font-size: 13px;
+    gap: 4px;
+  }
+
+  /* Places sheet: peeks by default, swipe up to open, swipe down to close */
+  .explore-panel {
+    bottom: 72px;
+    height: calc(100dvh - 72px - 140px);
+    padding: 0 0 16px;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -6px 24px #23283a1f;
+    transition: height 0.3s ease;
+    overscroll-behavior: contain;
+  }
+  .explore-panel.sheet-closed {
+    height: 120px;
+    overflow: hidden;
+  }
+  .explore-panel:before {
+    display: none;
+  }
+  .sheet-toggle {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 34px;
+    padding: 0;
+    background: var(--panel);
+    border-radius: 24px 24px 0 0;
+  }
+  .sheet-toggle span {
+    width: 44px;
+    height: 5px;
+    border-radius: 99px;
+    background: #bccbe6;
+  }
+  .explore-intro {
+    padding: 0 20px 4px;
+  }
+  .explore-intro h1 {
+    font-size: 21px;
+  }
+  .nearby-heading {
+    padding: 6px 20px 12px;
+  }
+  .places-list {
+    padding: 0 16px;
+  }
+  .place-card {
+    padding: 12px;
+  }
+  .community-note {
+    margin: 16px 16px 0;
+  }
+  .map-page:not(.has-detail) .leaflet-bottom {
+    bottom: calc(72px + 120px);
+  }
+  .map-page:not(.has-detail) .toast-region {
+    bottom: 204px;
+  }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+  .explore-panel {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   Slimmer collapsed sheet + account screens that fit
+   ========================================================= */
+@media (max-width: 760px) {
+  /* Collapsed: only the handle and the title line peek out */
+  .explore-panel.sheet-closed {
+    height: 66px;
+  }
+  .sheet-toggle {
+    height: 24px;
+  }
+  .explore-intro {
+    padding: 0 20px 6px;
+  }
+  .sheet-closed .explore-intro {
+    cursor: pointer;
+  }
+  .map-page:not(.has-detail) .leaflet-bottom {
+    bottom: calc(72px + 66px);
+  }
+  .map-page:not(.has-detail) .toast-region {
+    bottom: 150px;
+  }
+
+  /* Account menu: everything fits on one screen */
+  .drawer-backdrop .modal {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .drawer-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px 20px;
+    min-height: 0;
+  }
+  .modal-header {
+    padding: 12px 18px;
+  }
+  .profile-card h2 {
+    margin-top: 10px;
+  }
+  .profile-card .avatar.big {
+    width: 60px;
+    height: 60px;
+  }
+  .profile-points {
+    margin-top: 14px;
+    padding: 12px 10px;
+  }
+  .drawer-nav {
+    padding: 14px 0;
+    gap: 2px;
+  }
+  .drawer-nav > button {
+    min-height: 48px;
+    padding: 10px 8px;
+  }
+  .drawer-message {
+    margin-top: auto;
+    padding: 16px;
+  }
+  .drawer-message > svg {
+    width: 24px;
+    height: 24px;
+  }
+  .drawer-message h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-top: 6px;
+  }
+  .drawer-message p {
+    margin-top: 6px;
+  }
+  .drawer-body .demo-caption {
+    margin: 12px 0 0;
+  }
+
+  /* Settings page: compact enough to fit without scrolling */
+  .settings-page .page-header {
+    padding: 14px 16px;
+  }
+  .settings-page .page-body {
+    padding: 16px;
+  }
+  .settings-page .preview-note {
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .settings-page .preview-note p {
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+  .settings-page .page-body > h2 {
+    margin-bottom: 8px;
+  }
+  .settings-row {
+    padding: 11px 14px;
+    margin-bottom: 6px;
+    min-height: 56px;
+  }
+  .settings-row > div {
+    gap: 2px;
+  }
+  .settings-footer {
+    padding: 14px 0 0;
+  }
+  .settings-footer img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 6px;
+  }
+  .settings-footer p {
+    margin: 2px 0;
+  }
+}
+/* Very short phones: drop the extra message so the menu still fits */
+@media (max-width: 760px) and (max-height: 700px) {
+  .drawer-message,
+  .settings-footer {
+    display: none;
+  }
+}
+
+/* Explore panel without the slogan: filters first, then "Explore nearby" */
+.explore-panel .category-list {
+  padding-top: 26px;
+}
+.nearby-heading h1 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: var(--ink);
+}
+@media (max-width: 760px) {
+  .explore-panel .category-list {
+    padding-top: 0;
+  }
+  .nearby-heading {
+    padding: 4px 20px 12px;
+  }
+  .nearby-heading h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .sheet-closed .nearby-heading {
+    cursor: pointer;
   }
 }
