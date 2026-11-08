@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { api, isMock } from "../api/client";
-import { IconButton } from "./UI";
+import { IconButton, wheelchairLabel } from "./UI";
 const center = isMock ? [47.8262, 13.04] : [47.9186, 13.7995];
 const STREET_MIN_ZOOM = 14;
 // Licence terms: this credit must stay visible whenever the street layer is shown.
 const STREET_CREDIT =
-  '<a href="https://portal.ttf.nexyo.io/products?id=8beab1aa-496d-4791-bc13-788e3b85e2c8">Street data: Hackathon Veterans</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> &middot; &copy; OpenStreetMap contributors';
+  '<a href="https://portal.ttf.nexyo.io/products?id=8beab1aa-496d-4791-bc13-788e3b85e2c8">Street data: Hackathon Veterans</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>';
+const OSM_CREDIT =
+  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 function streetStyle({ properties: p }) {
   const color =
     p.highway === "steps" || p.wheelchair === "no"
@@ -65,11 +67,7 @@ export default function MapView({ locations, selected, onSelect, notify }) {
     ).addTo(instance);
     tile.current = L.tileLayer(
       "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-      {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      },
+      { maxZoom: 19 },
     ).addTo(instance);
     const useFallback = () => {
       if (instance.hasLayer(tile.current)) {
@@ -87,6 +85,8 @@ export default function MapView({ locations, selected, onSelect, notify }) {
       useFallback();
     });
     instance.attributionControl.setPrefix(false);
+    // Added to the map, not the tiles: the street layer needs it even on the fallback map.
+    instance.attributionControl.addAttribution(OSM_CREDIT);
     markers.current = L.layerGroup().addTo(instance);
     L.circleMarker(center, {
       radius: 8,
@@ -165,7 +165,8 @@ export default function MapView({ locations, selected, onSelect, notify }) {
       badge.className = "pin-score";
       badge.innerHTML = wheelchair;
       const score = document.createElement("strong");
-      score.textContent = place.score.toFixed(1);
+      const access = wheelchairLabel(place);
+      score.textContent = access || place.score.toFixed(1);
       badge.append(score);
       const name = document.createElement("span");
       name.className = "pin-name";
@@ -185,7 +186,9 @@ export default function MapView({ locations, selected, onSelect, notify }) {
           iconAnchor: [40, 40],
         }),
         keyboard: true,
-        title: `${place.name}, ${place.score} out of 5`,
+        title: access
+          ? `${place.name}, wheelchair access: ${access}`
+          : `${place.name}, ${place.score} out of 5`,
         alt: place.name,
         zIndexOffset: selected === place.id ? 1000 : 0,
       }).addTo(markers.current);
@@ -194,7 +197,9 @@ export default function MapView({ locations, selected, onSelect, notify }) {
         .getElement()
         ?.setAttribute(
           "aria-label",
-          `Open ${place.name}, accessibility ${place.score} out of 5`,
+          access
+            ? `Open ${place.name}, wheelchair access: ${access}`
+            : `Open ${place.name}, accessibility ${place.score} out of 5`,
         );
     });
   }, [locations, selected]);

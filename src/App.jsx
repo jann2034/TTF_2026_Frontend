@@ -266,7 +266,9 @@ export default function App() {
         {route.page === "achievements" && (
           <Achievements profile={profile} onBack={() => navigate()} />
         )}
-        {route.page === "settings" && <Settings onBack={() => navigate()} />}
+        {route.page === "settings" && (
+          <Settings onBack={() => navigate()} catalog={catalog} />
+        )}
       </main>
       {route.page === "home" && (
         <nav className="mobile-nav" aria-label="Main navigation">

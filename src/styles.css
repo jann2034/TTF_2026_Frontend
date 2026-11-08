@@ -564,6 +564,9 @@ button:not(:disabled):active {
 .score-mixed {
   color: #b42332;
 }
+.score-unknown {
+  color: #64748b;
+}
 .place-note {
   display: flex;
   align-items: center;

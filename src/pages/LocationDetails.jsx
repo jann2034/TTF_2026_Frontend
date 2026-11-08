@@ -6,6 +6,7 @@ import {
   PlaceArt,
   Stars,
   scoreLabel,
+  wheelchairLabel,
 } from "../components/UI";
 export default function LocationDetails({
   place,
@@ -18,6 +19,7 @@ export default function LocationDetails({
   initialTab = "overview",
 }) {
   const [tab, setTab] = useState(initialTab);
+  const access = wheelchairLabel(place);
   return (
     <section className="detail-panel" aria-label={`${place.name} details`}>
       <div className="sheet-handle" />
@@ -50,15 +52,27 @@ export default function LocationDetails({
       <div className="location-summary">
         <PlaceArt place={place} large />
         <div className="rating-summary">
-          <span className="score-description">{scoreLabel(place.score)}</span>
-          <div className="large-score">
-            {place.score.toFixed(1)}
-            <span>/ 5</span>
-          </div>
-          <Stars score={place.score} size={16} />
-          <span className="review-count">
-            From {place.reviewCount} community reviews
-          </span>
+          {access && !place.reviewCount ? (
+            <>
+              <span className="score-description">Wheelchair access</span>
+              <div className="large-score">{access}</div>
+              <span className="review-count">No community reviews yet</span>
+            </>
+          ) : (
+            <>
+              <span className="score-description">
+                {scoreLabel(place.score)}
+              </span>
+              <div className="large-score">
+                {place.score.toFixed(1)}
+                <span>/ 5</span>
+              </div>
+              <Stars score={place.score} size={16} />
+              <span className="review-count">
+                From {place.reviewCount} community reviews
+              </span>
+            </>
+          )}
         </div>
       </div>
       <div
@@ -224,9 +238,6 @@ export default function LocationDetails({
               Community observations can change. Check the features that matter
               to you.
             </p>
-            {catalog.attribution?.length > 0 && (
-              <p className="data-note">Data: {catalog.attribution.join(" · ")}</p>
-            )}
           </>
         ) : (
           <>

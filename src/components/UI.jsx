@@ -47,11 +47,36 @@ export function scoreLabel(score) {
         ? "Mixed accessibility"
         : "Limited accessibility";
 }
-export function Score({ score }) {
+const WHEELCHAIR_LABELS = {
+  yes: "Yes",
+  limited: "Limited",
+  no: "No",
+  unknown: "Unknown",
+};
+// Undefined in mock mode, where places only have a star score.
+export const wheelchairLabel = (place) =>
+  WHEELCHAIR_LABELS[place.wheelchairAccess];
+export function Score({ place }) {
+  const label = wheelchairLabel(place);
+  const tone = !label
+    ? place.score < 3.5
+      ? "score-mixed"
+      : ""
+    : ["limited", "no"].includes(place.wheelchairAccess)
+      ? "score-mixed"
+      : place.wheelchairAccess === "unknown"
+        ? "score-unknown"
+        : "";
   return (
-    <span className={`score-badge ${score < 3.5 ? "score-mixed" : ""}`}>
+    <span
+      className={`score-badge ${tone}`}
+      {...(label && {
+        role: "img",
+        "aria-label": `Wheelchair access: ${label}`,
+      })}
+    >
       <Icon name="Accessibility" size={15} />
-      <strong>{score.toFixed(1)}</strong>
+      <strong>{label || place.score.toFixed(1)}</strong>
     </span>
   );
 }

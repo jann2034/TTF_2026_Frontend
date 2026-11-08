@@ -25,7 +25,7 @@ export function PlaceCard({ place, onClick }) {
         </span>
         <strong>{place.name}</strong>
         <span className="place-rating">
-          <Score score={place.score} />
+          <Score place={place} />
           <span>{place.reviewCount} reviews</span>
         </span>
         <span className={`place-note ${place.reports.length ? "warning" : ""}`}>

@@ -1,6 +1,6 @@
 import Icon from "../components/Icon";
 import { PageHeader } from "../components/UI";
-export default function Settings({ onBack }) {
+export default function Settings({ onBack, catalog }) {
   return (
     <section className="standalone-page settings-page">
       <PageHeader
@@ -44,6 +44,25 @@ export default function Settings({ onBack }) {
             <Icon name="LockKeyhole" size={15} />
           </div>
         ))}
+        {catalog.attribution?.length > 0 && (
+          <>
+            <h2>Data credits</h2>
+            <ul className="data-credits">
+              {catalog.attribution.map((credit) => (
+                <li key={credit}>{credit}</li>
+              ))}
+              <li>
+                <a href="https://portal.ttf.nexyo.io/products?id=8beab1aa-496d-4791-bc13-788e3b85e2c8">
+                  Street data: Hackathon Veterans
+                </a>
+                ,{" "}
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  CC BY-SA 4.0
+                </a>
+              </li>
+            </ul>
+          </>
+        )}
         <div className="settings-footer">
           <img src="/favicon.svg" alt="" />
           <strong>Access</strong>
