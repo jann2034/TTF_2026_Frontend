@@ -1,7 +1,6 @@
-import { useRef, useState } from "react";
 import { isMock } from "../api/client";
 import Icon from "../components/Icon";
-import { PlaceArt, Score, Stars } from "../components/UI";
+import { PlaceArt, Score, Stars, useBottomSheet } from "../components/UI";
 export const categories = [
   { name: "All places", icon: "Compass" },
   { name: "Food & drink", icon: "Utensils" },
@@ -53,32 +52,12 @@ export function PlaceCard({ place, onClick }) {
 }
 export default function Explore({ locations, category, onCategory, onSelect }) {
   // On phones the list is a bottom sheet: collapsed by default so the map has room.
-  const [open, setOpen] = useState(false);
-  const panel = useRef();
-  const startY = useRef(null);
-  const atTop = () => (panel.current?.scrollTop ?? 0) <= 0;
-  const setSheet = (value) => {
-    setOpen(value);
-    if (!value && panel.current) panel.current.scrollTop = 0;
-  };
+  const { open, setSheet, ref: panel, handlers } = useBottomSheet(false);
   return (
     <section
       ref={panel}
       className={`explore-panel ${open ? "sheet-open" : "sheet-closed"}`}
-      onTouchStart={(e) => {
-        startY.current = e.touches[0].clientY;
-      }}
-      onTouchEnd={(e) => {
-        if (startY.current === null) return;
-        const dy = e.changedTouches[0].clientY - startY.current;
-        startY.current = null;
-        if (!open && dy < -30) setSheet(true);
-        else if (open && dy > 40 && atTop()) setSheet(false);
-      }}
-      onWheel={(e) => {
-        if (!open && e.deltaY > 0) setSheet(true);
-        else if (open && e.deltaY < 0 && atTop()) setSheet(false);
-      }}
+      {...handlers}
     >
       <button
         type="button"

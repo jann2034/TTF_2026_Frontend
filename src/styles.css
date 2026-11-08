@@ -3714,3 +3714,132 @@ body {
     cursor: pointer;
   }
 }
+
+/* Place details: breathing room above "Leave a review" */
+.detail-content > .primary-button {
+  margin-top: 28px;
+}
+.detail-content > .primary-button:first-child {
+  margin-top: 0;
+}
+
+/* Bigger, readable stars */
+.stars {
+  gap: 3px;
+}
+.review-author > .stars svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Review form: rating question sits inside its box, bold and clear */
+.rating-fieldset {
+  padding: 22px 18px 18px;
+}
+.rating-fieldset legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 6px;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+  text-align: center;
+}
+.rating-fieldset .rating-input {
+  clear: both;
+  margin-top: 10px;
+}
+
+/* Review form: larger tick boxes and rows that are easy to tap */
+.feature-option {
+  min-height: 54px;
+  padding: 12px 14px;
+  gap: 12px;
+}
+.checkbox,
+.feature-option .checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+}
+.checkbox svg {
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 760px) {
+  .feature-option {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+  .feature-option > svg {
+    width: 20px;
+  }
+  .feature-option .checkbox {
+    width: 26px;
+    height: 26px;
+  }
+  .rating-fieldset legend {
+    font-size: 19px;
+  }
+}
+@media (max-width: 760px) {
+  .feature-options {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* Place card on phones: swipe down (or tap the handle) to tuck it away */
+@media (max-width: 760px) {
+  .detail-panel {
+    transition: top 0.3s ease;
+    overscroll-behavior: contain;
+  }
+  .detail-panel.sheet-closed {
+    top: calc(100dvh - 84px);
+    overflow: hidden;
+  }
+  /* Tucked away: just the handle and the place name */
+  .detail-panel.sheet-closed > :not(.sheet-handle):not(.detail-title),
+  .detail-panel.sheet-closed .detail-actions {
+    display: none;
+  }
+  .detail-panel.sheet-closed .detail-title {
+    margin-top: 4px;
+    cursor: pointer;
+  }
+  .detail-panel.sheet-closed .detail-title h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .detail-panel .sheet-handle {
+    position: sticky;
+    top: -9px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 46px);
+    height: 30px;
+    margin: -9px -23px 0;
+    padding: 0;
+    border-radius: 27px 27px 0 0;
+    background: white;
+  }
+  .detail-panel .sheet-handle span {
+    width: 44px;
+    height: 5px;
+    border-radius: 99px;
+    background: #bccbe6;
+  }
+  .has-detail:has(.detail-panel.sheet-closed) .leaflet-bottom {
+    bottom: 88px;
+  }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+  .detail-panel {
+    transition: none;
+  }
+}

@@ -7,6 +7,7 @@ import {
   Stars,
   scoreLabel,
   wheelchairLabel,
+  useBottomSheet,
 } from "../components/UI";
 export default function LocationDetails({
   place,
@@ -20,9 +21,23 @@ export default function LocationDetails({
 }) {
   const [tab, setTab] = useState(initialTab);
   const access = wheelchairLabel(place);
+  const { open, setSheet, ref, handlers } = useBottomSheet(true);
   return (
-    <section className="detail-panel" aria-label={`${place.name} details`}>
-      <div className="sheet-handle" />
+    <section
+      ref={ref}
+      className={`detail-panel ${open ? "sheet-open" : "sheet-closed"}`}
+      aria-label={`${place.name} details`}
+      {...handlers}
+    >
+      <button
+        type="button"
+        className="sheet-handle"
+        aria-expanded={open}
+        aria-label={open ? "Hide place details" : "Show place details"}
+        onClick={() => setSheet(!open)}
+      >
+        <span />
+      </button>
       <div className="detail-top">
         <span className="place-category">
           <Icon name="MapPin" size={14} />
@@ -30,7 +45,12 @@ export default function LocationDetails({
         </span>
         <IconButton icon="X" label="Close place details" onClick={onClose} />
       </div>
-      <div className="detail-title">
+      <div
+        className="detail-title"
+        onClick={() => {
+          if (!open) setSheet(true);
+        }}
+      >
         <h1>{place.name}</h1>
         <span className="detail-actions">
           <IconButton
@@ -67,7 +87,7 @@ export default function LocationDetails({
                 {place.score.toFixed(1)}
                 <span>/ 5</span>
               </div>
-              <Stars score={place.score} size={16} />
+              <Stars score={place.score} size={20} />
               <span className="review-count">
                 From {place.reviewCount} community reviews
               </span>
@@ -251,7 +271,7 @@ export default function LocationDetails({
                       })}
                     </span>
                   </div>
-                  <Stars score={review.rating} />
+                  <Stars score={review.rating} size={18} />
                 </div>
                 {review.text && <p>{review.text}</p>}
                 <FeatureChips
