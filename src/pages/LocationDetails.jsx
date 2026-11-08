@@ -55,7 +55,7 @@ export default function LocationDetails({
             {place.score.toFixed(1)}
             <span>/ 5</span>
           </div>
-          <Stars score={place.score} size={16} />
+          <Stars score={place.score} size={20} />
           <span className="review-count">
             From {place.reviewCount} community reviews
           </span>
@@ -210,7 +210,7 @@ export default function LocationDetails({
                       })}
                     </span>
                   </div>
-                  <Stars score={review.rating} />
+                  <Stars score={review.rating} size={18} />
                 </div>
                 {review.text && <p>{review.text}</p>}
                 <FeatureChips

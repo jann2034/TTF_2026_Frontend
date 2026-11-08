@@ -71,7 +71,7 @@ export default function Review({ place, catalog, onBack, onSubmit }) {
       />
       <form className="page-body" onSubmit={submit}>
         <fieldset className="rating-fieldset">
-          <legend>How accessible was this place?</legend>
+          <legend>Rate this place’s accessibility</legend>
           <div
             className="rating-input"
             role="radiogroup"
@@ -124,7 +124,7 @@ export default function Review({ place, catalog, onBack, onSubmit }) {
                 <span>{item.label}</span>
                 <span className="checkbox">
                   {amenities.includes(item.id) && (
-                    <Icon name="Check" size={12} />
+                    <Icon name="Check" size={16} />
                   )}
                 </span>
               </button>
@@ -147,7 +147,7 @@ export default function Review({ place, catalog, onBack, onSubmit }) {
                 <span>{item.label}</span>
                 <span className="checkbox">
                   {obstacles.includes(item.id) && (
-                    <Icon name="Check" size={12} />
+                    <Icon name="Check" size={16} />
                   )}
                 </span>
               </button>
