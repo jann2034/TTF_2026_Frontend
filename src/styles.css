@@ -3786,3 +3786,57 @@ body {
     gap: 8px;
   }
 }
+
+/* Place card on phones: swipe down (or tap the handle) to tuck it away */
+@media (max-width: 760px) {
+  .detail-panel {
+    transition: top 0.3s ease;
+    overscroll-behavior: contain;
+  }
+  .detail-panel.sheet-closed {
+    top: calc(100dvh - 84px);
+    overflow: hidden;
+  }
+  /* Tucked away: just the handle and the place name */
+  .detail-panel.sheet-closed > :not(.sheet-handle):not(.detail-title),
+  .detail-panel.sheet-closed .detail-actions {
+    display: none;
+  }
+  .detail-panel.sheet-closed .detail-title {
+    margin-top: 4px;
+    cursor: pointer;
+  }
+  .detail-panel.sheet-closed .detail-title h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .detail-panel .sheet-handle {
+    position: sticky;
+    top: -9px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 46px);
+    height: 30px;
+    margin: -9px -23px 0;
+    padding: 0;
+    border-radius: 27px 27px 0 0;
+    background: white;
+  }
+  .detail-panel .sheet-handle span {
+    width: 44px;
+    height: 5px;
+    border-radius: 99px;
+    background: #bccbe6;
+  }
+  .has-detail:has(.detail-panel.sheet-closed) .leaflet-bottom {
+    bottom: 88px;
+  }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+  .detail-panel {
+    transition: none;
+  }
+}

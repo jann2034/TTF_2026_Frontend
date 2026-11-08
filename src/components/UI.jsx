@@ -1,5 +1,35 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
+
+// Phone bottom sheets: swipe (or scroll) up to open, down at the top to tuck away.
+// The collapsed/expanded look only applies in the mobile CSS.
+export function useBottomSheet(initialOpen) {
+  const [open, setOpen] = useState(initialOpen);
+  const ref = useRef();
+  const startY = useRef(null);
+  const atTop = () => (ref.current?.scrollTop ?? 0) <= 0;
+  const setSheet = (value) => {
+    setOpen(value);
+    if (!value && ref.current) ref.current.scrollTop = 0;
+  };
+  const handlers = {
+    onTouchStart: (e) => {
+      startY.current = e.touches[0].clientY;
+    },
+    onTouchEnd: (e) => {
+      if (startY.current === null) return;
+      const dy = e.changedTouches[0].clientY - startY.current;
+      startY.current = null;
+      if (!open && dy < -30) setSheet(true);
+      else if (open && dy > 40 && atTop()) setSheet(false);
+    },
+    onWheel: (e) => {
+      if (!open && e.deltaY > 0) setSheet(true);
+      else if (open && e.deltaY < 0 && atTop()) setSheet(false);
+    },
+  };
+  return { open, setSheet, ref, handlers };
+}
 
 export function IconButton({ icon, label, className = "", ...props }) {
   return (
