@@ -32,10 +32,8 @@ export default function Achievements({ profile, onBack }) {
       />
       <div className="page-body">
         <div className="achievement-hero">
-          <span className="hero-orbit one" />
-          <span className="hero-orbit two" />
           <Icon name="Trophy" size={45} />
-          <span className="eyebrow">MAKING A DIFFERENCE</span>
+          <span className="eyebrow">Making a difference</span>
           <h2>
             {profile.points}
             <span>community points</span>

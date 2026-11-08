@@ -47,9 +47,6 @@ export default function Explore({ locations, category, onCategory, onSelect }) {
   return (
     <section className="explore-panel">
       <div className="explore-intro">
-        <div className="eyebrow">
-          <span className="status-dot" /> COMMUNITY-POWERED ACCESSIBILITY
-        </div>
         <h1>
           More places.
           <br />

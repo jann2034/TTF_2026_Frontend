@@ -1,13 +1,10 @@
-@import "@fontsource/dm-sans/latin-400.css";
-@import "@fontsource/dm-sans/latin-500.css";
-@import "@fontsource/dm-sans/latin-600.css";
-@import "@fontsource/dm-sans/latin-700.css";
-@import "@fontsource/manrope/latin-600.css";
-@import "@fontsource/manrope/latin-700.css";
-@import "@fontsource/manrope/latin-800.css";
+@import "@fontsource/nunito/latin-400.css";
+@import "@fontsource/nunito/latin-600.css";
+@import "@fontsource/nunito/latin-700.css";
+@import "@fontsource/nunito/latin-800.css";
 
 :root {
-  font-family: "DM Sans", sans-serif;
+  font-family: Nunito, system-ui, sans-serif;
   color: #202b3d;
   background: #f6f8fb;
   font-synthesis: none;
@@ -73,20 +70,20 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Manrope, "DM Sans", sans-serif;
+  font-family: Nunito, system-ui, sans-serif;
 }
 h1 {
   font-weight: 800;
-  letter-spacing: -1px;
+  letter-spacing: -0.33px;
 }
 h2 {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 750;
-  letter-spacing: -0.35px;
+  letter-spacing: -0.12px;
 }
 h3 {
-  font-size: 15px;
-  letter-spacing: -0.15px;
+  font-size: 17px;
+  letter-spacing: -0.05px;
 }
 p {
   line-height: 1.65;
@@ -136,10 +133,10 @@ button:not(:disabled):active {
   object-fit: contain;
 }
 .brand > span {
-  font-family: Manrope, sans-serif;
+  font-family: Nunito, system-ui, sans-serif;
   font-weight: 800;
   font-size: 29px;
-  letter-spacing: -1.6px;
+  letter-spacing: -0.4px;
 }
 .brand-dot {
   color: #4d88c6;
@@ -175,7 +172,7 @@ button:not(:disabled):active {
   padding: 0 16px;
   width: 100%;
   color: #6b7789;
-  font-size: 13px;
+  font-size: 16px;
   text-align: left;
 }
 .search-trigger > svg {
@@ -184,7 +181,7 @@ button:not(:disabled):active {
 .search-shortcut {
   margin-left: auto;
   padding: 3px 7px;
-  font-size: 10px;
+  font-size: 13px;
   border: 1px solid #dfe5ee;
   border-radius: 5px;
   color: #64748b;
@@ -196,7 +193,7 @@ button:not(:disabled):active {
   margin-left: auto;
 }
 .demo-label {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.4px;
   background: #eff3f7;
@@ -210,14 +207,14 @@ button:not(:disabled):active {
   align-items: center;
   gap: 7px;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 15px;
   color: #64748b;
 }
 .points-button svg {
   color: var(--blue);
 }
 .points-button strong {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--blue);
 }
 .avatar {
@@ -229,7 +226,7 @@ button:not(:disabled):active {
   border-radius: 50%;
   background: #e9edf8;
   color: var(--blue);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   border: 3px solid white;
   box-shadow: 0 0 0 1px #e5eaf3;
@@ -243,7 +240,7 @@ button:not(:disabled):active {
 .avatar.small {
   height: 35px;
   width: 35px;
-  font-size: 11px;
+  font-size: 14px;
   background: #eaf2fc;
   color: #4779aa;
 }
@@ -292,7 +289,7 @@ button:not(:disabled):active {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
   color: #536673;
 }
@@ -334,7 +331,7 @@ button:not(:disabled):active {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 15px;
   filter: drop-shadow(0 2px 3px #223c5b15);
   position: relative;
   height: 36px;
@@ -363,11 +360,11 @@ button:not(:disabled):active {
   padding: 4px 5px;
   background: var(--pale-blue);
   border-radius: 5px;
-  font-size: 11px;
+  font-size: 14px;
 }
 .pin-name {
   font-weight: 700;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.07px;
 }
 .map-pin.selected {
   background: var(--blue);
@@ -389,7 +386,7 @@ button:not(:disabled):active {
   color: white;
   border: 2px solid white;
   font-weight: bold;
-  font-size: 11px;
+  font-size: 14px;
   border-radius: 50%;
   height: 17px;
   width: 17px;
@@ -422,7 +419,7 @@ button:not(:disabled):active {
   align-items: center;
   gap: 6px;
   letter-spacing: 1.25px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   color: #6d7b85;
 }
@@ -435,7 +432,7 @@ button:not(:disabled):active {
   color: var(--blue);
 }
 .explore-intro p {
-  font-size: 12px;
+  font-size: 15px;
   color: #64748b;
   line-height: 1.8;
 }
@@ -452,7 +449,7 @@ button:not(:disabled):active {
   padding: 8px 10px;
   border: 1px solid #e5e9ef;
   border-radius: 8px;
-  font-size: 10px;
+  font-size: 13px;
   color: #617084;
   font-weight: 500;
   white-space: nowrap;
@@ -478,22 +475,22 @@ button:not(:disabled):active {
   color: #64748b;
 }
 .nearby-heading h2 {
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   gap: 8px;
   align-items: center;
 }
 .nearby-heading h2 > span {
   font:
-          500 10px "DM Sans",
-          sans-serif;
+          500 13px Nunito,
+    sans-serif;
   color: #64748b;
   background: #f1f4f8;
   border-radius: 5px;
   padding: 3px 6px;
 }
 .nearby-heading p {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin-top: 5px;
 }
@@ -528,7 +525,7 @@ button:not(:disabled):active {
   min-width: 0;
 }
 .place-category {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -540,9 +537,9 @@ button:not(:disabled):active {
 }
 .place-card-info > strong {
   font:
-          750 14px Manrope,
-          sans-serif;
-  letter-spacing: -0.25px;
+          750 16px Nunito,
+    sans-serif;
+  letter-spacing: -0.08px;
   color: #2d394b;
 }
 .place-rating {
@@ -551,7 +548,7 @@ button:not(:disabled):active {
   gap: 7px;
 }
 .place-rating > span:last-child {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
 }
 .score-badge {
@@ -559,7 +556,7 @@ button:not(:disabled):active {
   align-items: center;
   gap: 3px;
   color: var(--blue);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1;
 }
 .score-mixed {
@@ -570,7 +567,7 @@ button:not(:disabled):active {
   align-items: center;
   gap: 4px;
   color: #64748b;
-  font-size: 11px;
+  font-size: 14px;
 }
 .warning {
   color: #b42332 !important;
@@ -612,19 +609,15 @@ button:not(:disabled):active {
   color: #f9fcff;
   border-radius: 9px 9px 0 0;
   transform: translateY(10px);
-  box-shadow: 10px 5px 0 #d1ddeb;
 }
 .green .art-building {
   background: #91b5df;
-  box-shadow: 10px 5px 0 #cbdcf0;
 }
 .peach .art-building {
   background: #d3b18a;
-  box-shadow: 10px 5px 0 #e5d3bb;
 }
 .lavender .art-building {
   background: #b1a1c8;
-  box-shadow: 10px 5px 0 #d9cde5;
 }
 .art-sun {
   position: absolute;
@@ -673,17 +666,17 @@ button:not(:disabled):active {
   color: #6682ac;
 }
 .community-note strong {
-  font-size: 10px;
+  font-size: 13px;
 }
 .community-note p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   line-height: 1.5;
   margin-top: 4px;
 }
 .demo-caption {
   text-align: center;
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.15px;
   color: #64748b;
   margin: 16px 15px 22px;
@@ -717,7 +710,7 @@ button:not(:disabled):active {
 }
 .detail-title h1 {
   font-size: 25px;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.23px;
 }
 .detail-actions {
   display: flex;
@@ -733,7 +726,7 @@ button:not(:disabled):active {
   width: 16px;
 }
 .address {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   display: flex;
   align-items: center;
@@ -753,19 +746,19 @@ button:not(:disabled):active {
   gap: 7px;
 }
 .score-description {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--green);
 }
 .large-score {
   font-size: 29px;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: -0.33px;
   color: #263750;
   line-height: 1;
 }
 .large-score > span {
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0;
   color: #64748b;
   font-weight: 400;
@@ -787,7 +780,7 @@ button:not(:disabled):active {
   display: flex;
 }
 .review-count {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .detail-tabs {
@@ -798,7 +791,7 @@ button:not(:disabled):active {
   gap: 28px;
 }
 .detail-tabs button {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   color: #64748b;
   padding: 14px 10px;
@@ -832,17 +825,17 @@ button:not(:disabled):active {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .section-heading > span {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
 }
 .section-heading > svg {
   color: #b94b55;
 }
 .section-copy {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin-top: -4px;
   margin-bottom: 13px;
@@ -858,7 +851,7 @@ button:not(:disabled):active {
   background: #fce9eb;
   color: #64748b;
   padding: 3px 6px;
-  font-size: 11px;
+  font-size: 14px;
   border-radius: 4px;
 }
 .live-issues {
@@ -889,11 +882,11 @@ button:not(:disabled):active {
   flex: 1;
 }
 .issue-card strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
 }
 .issue-card small {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .issue-card > svg {
@@ -905,11 +898,11 @@ button:not(:disabled):active {
   justify-content: center;
   gap: 7px;
   width: 100%;
-  border: 1px dashed #e7aab0;
+  border: 1px solid #f4d4d7;
   border-radius: 6px;
   padding: 9px;
   color: #64748b;
-  font-size: 10px;
+  font-size: 13px;
   background: #fffafa;
 }
 .feature-section {
@@ -929,7 +922,7 @@ button:not(:disabled):active {
   border: 1px solid #deebfa;
   border-radius: 6px;
   padding: 8px;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.2;
 }
 .feature-chip svg {
@@ -953,11 +946,11 @@ button:not(:disabled):active {
   color: #6d83a8;
 }
 .contribution-prompt strong {
-  font-size: 10px;
+  font-size: 13px;
   color: #5f6b80;
 }
 .contribution-prompt p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 3px;
 }
@@ -970,7 +963,7 @@ button:not(:disabled):active {
   gap: 8px;
   padding: 12px 18px;
   border-radius: 9px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
 }
 .primary-button {
@@ -990,14 +983,14 @@ button:not(:disabled):active {
   width: 100%;
 }
 .data-note {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   text-align: center;
   line-height: 1.6;
   margin: 12px 0 1px;
 }
 .all-clear {
-  font-size: 10px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -1011,10 +1004,10 @@ button:not(:disabled):active {
   margin: 28px 0 6px;
 }
 .reviews-heading h2 {
-  font-size: 13px;
+  font-size: 16px;
 }
 .reviews-heading span {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
 }
 .review-card {
@@ -1032,10 +1025,10 @@ button:not(:disabled):active {
   gap: 4px;
 }
 .review-author strong {
-  font-size: 11px;
+  font-size: 14px;
 }
 .review-author > div > span {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .review-author > .stars {
@@ -1045,7 +1038,7 @@ button:not(:disabled):active {
   width: 11px;
 }
 .review-card > p {
-  font-size: 11px;
+  font-size: 14px;
   color: #69778b;
   margin: 14px 0;
 }
@@ -1053,7 +1046,7 @@ button:not(:disabled):active {
   margin-top: 8px;
 }
 .review-card .feature-chip {
-  font-size: 10px;
+  font-size: 13px;
   padding: 6px;
 }
 .content-page .main-content {
@@ -1082,11 +1075,11 @@ button:not(:disabled):active {
   background: #f5f7fb;
 }
 .page-header h1 {
-  font-size: 19px;
-  letter-spacing: -0.5px;
+  font-size: 21px;
+  letter-spacing: -0.17px;
 }
 .page-header p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 5px;
 }
@@ -1119,7 +1112,7 @@ button:not(:disabled):active {
   background: none;
   border: 0;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 16px;
   height: 100%;
   outline-offset: 5px;
 }
@@ -1140,7 +1133,7 @@ button:not(:disabled):active {
   width: 100%;
   border-bottom: 1px solid #f0f3f7;
   text-align: left;
-  font-size: 12px;
+  font-size: 15px;
 }
 .recent-search > span {
   flex: 1;
@@ -1162,7 +1155,7 @@ button:not(:disabled):active {
   padding: 45px 10px;
   text-align: center;
   color: #64748b;
-  font-size: 12px;
+  font-size: 15px;
 }
 .empty-state h3 {
   margin: 12px 0 6px;
@@ -1185,10 +1178,10 @@ button:not(:disabled):active {
 .review-intro h2 {
   font-size: 24px;
   line-height: 1.35;
-  letter-spacing: -0.8px;
+  letter-spacing: -0.27px;
 }
 .review-intro p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 10px;
 }
@@ -1205,7 +1198,7 @@ fieldset {
   margin-bottom: 28px;
 }
 .rating-fieldset legend {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   width: 100%;
 }
@@ -1241,7 +1234,7 @@ fieldset {
   outline-offset: 3px;
 }
 .rating-fieldset p {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .feature-fieldset {
@@ -1249,11 +1242,11 @@ fieldset {
 }
 .feature-fieldset legend {
   font:
-          700 15px Manrope,
-          sans-serif;
+          700 17px Nunito,
+    sans-serif;
 }
 .feature-fieldset > p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin: 6px 0 13px;
 }
@@ -1271,7 +1264,7 @@ fieldset {
   min-height: 48px;
   border-radius: 8px;
   text-align: left;
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 .feature-option > span:not(.checkbox) {
@@ -1310,13 +1303,13 @@ fieldset {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   margin: 20px 0 10px;
 }
 .text-label > span {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
 }
 textarea,
@@ -1327,7 +1320,7 @@ select {
   background: #fbfcfe;
   color: #3e4f68;
   padding: 13px;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.7;
 }
 textarea {
@@ -1343,7 +1336,7 @@ select {
 .character-count {
   text-align: right;
   color: #64748b;
-  font-size: 11px;
+  font-size: 14px;
   margin: 6px 0 22px;
 }
 .achievement-hero {
@@ -1360,7 +1353,7 @@ select {
 .achievement-hero > .eyebrow {
   justify-content: center;
   color: #adc6f2;
-  font-size: 10px;
+  font-size: 13px;
   margin: 15px 0 10px;
 }
 .achievement-hero > svg {
@@ -1369,18 +1362,18 @@ select {
 .achievement-hero h2 {
   font-size: 40px;
   line-height: 1.15;
-  letter-spacing: -1px;
+  letter-spacing: -0.33px;
 }
 .achievement-hero h2 > span {
   display: block;
-  font-size: 11px;
-  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-family: Nunito, system-ui, sans-serif;
   letter-spacing: 0;
   font-weight: 400;
   margin-top: 7px;
 }
 .achievement-hero > p {
-  font-size: 10px;
+  font-size: 13px;
   color: #b0c7ec;
   margin-top: 17px;
 }
@@ -1431,11 +1424,11 @@ select {
   flex: 1;
 }
 .achievement-info h3 {
-  font-size: 13px;
+  font-size: 16px;
   color: #778295;
 }
 .achievement-info p {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin-top: 5px;
 }
@@ -1472,7 +1465,7 @@ select {
   color: white;
 }
 .unlocked-label {
-  font-size: 11px;
+  font-size: 14px;
   color: #477fb9;
   display: flex;
   align-items: center;
@@ -1493,7 +1486,7 @@ select {
 }
 .progress-count {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin-top: 5px;
   text-align: right;
@@ -1508,15 +1501,15 @@ select {
   margin-bottom: 30px;
 }
 .preview-note strong {
-  font-size: 12px;
+  font-size: 15px;
 }
 .preview-note p {
-  font-size: 11px;
+  font-size: 14px;
   color: #7a8ba6;
   margin-top: 6px;
 }
 .settings-page .page-body > h2 {
-  font-size: 13px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 .settings-row {
@@ -1532,14 +1525,14 @@ select {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 12px;
+  font-size: 15px;
 }
 .settings-row strong {
   color: #56667c;
   font-weight: 500;
 }
 .settings-row span {
-  font-size: 10px;
+  font-size: 13px;
 }
 .settings-footer {
   padding: 35px;
@@ -1553,15 +1546,15 @@ select {
   margin: 0 auto 10px;
 }
 .settings-footer strong {
-  font-size: 17px;
+  font-size: 19px;
 }
 .settings-footer p {
-  font-size: 10px;
+  font-size: 13px;
   color: #64748b;
   margin: 7px 0 5px;
 }
 .settings-footer span {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
 }
 .modal-backdrop {
@@ -1594,22 +1587,22 @@ select {
   padding: 16px 22px;
 }
 .modal-header h2 {
-  font-size: 16px;
+  font-size: 18px;
 }
 .modal-body {
   padding: 24px;
 }
 .modal-body > h3 {
-  font-size: 20px;
+  font-size: 22px;
   margin: 0 0 12px;
 }
 .modal-body p {
-  font-size: 12px;
+  font-size: 15px;
   color: #64748b;
 }
 .modal-body > h4 {
   margin: 26px 0 6px;
-  font-size: 15px;
+  font-size: 17px;
 }
 .modal-body .round-illustration.warning {
   background: #ffeaec;
@@ -1626,7 +1619,7 @@ select {
   gap: 7px;
   margin-top: 17px;
   color: #64748b;
-  font-size: 10px;
+  font-size: 13px;
 }
 .modal-body form > .primary-button {
   margin-top: 20px;
@@ -1651,10 +1644,10 @@ select {
 }
 .profile-card h2 {
   margin-top: 16px;
-  font-size: 20px;
+  font-size: 22px;
 }
 .profile-card > p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 6px;
 }
@@ -1669,10 +1662,10 @@ select {
   justify-content: center;
   gap: 7px;
   color: #5f78a8;
-  font-size: 10px;
+  font-size: 13px;
 }
 .profile-points strong {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--blue);
 }
 .drawer-nav {
@@ -1687,7 +1680,7 @@ select {
   gap: 12px;
   text-align: left;
   padding: 14px 6px;
-  font-size: 12px;
+  font-size: 15px;
   color: #64758f;
   border-radius: 7px;
 }
@@ -1709,7 +1702,7 @@ select {
   margin-top: 12px;
 }
 .drawer-message p {
-  font-size: 11px;
+  font-size: 14px;
   color: #64748b;
   margin-top: 13px;
 }
@@ -1746,7 +1739,7 @@ select {
   color: #b8d9ff;
 }
 .toast > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
 }
 .toast .icon-button {
@@ -1766,7 +1759,7 @@ select {
   border: 1px solid #f0cccc;
   border-radius: 9px;
   padding: 13px;
-  font-size: 12px;
+  font-size: 15px;
   margin: 12px 0;
 }
 .error-message button {
@@ -1791,13 +1784,13 @@ select {
   font-size: 27px;
 }
 .boot-screen > p {
-  font-size: 12px;
+  font-size: 15px;
   color: #64748b;
 }
 .loading-panel {
   padding: 40px;
   color: #64748b;
-  font-size: 13px;
+  font-size: 16px;
 }
 .sheet-handle {
   display: none;
@@ -1819,6 +1812,44 @@ select {
   to {
     transform: translateX(0);
   }
+}
+
+/* Finishing touches */
+.explore-intro h1 {
+  margin-top: 0;
+}
+.search-trigger,
+.category,
+.feature-chip,
+.map-pin,
+.map-status {
+  border-radius: 999px;
+}
+.category {
+  padding: 8px 14px 8px 12px;
+}
+.map-pin {
+  padding-left: 6px;
+  padding-right: 12px;
+}
+.map-pin:after {
+  bottom: -4px;
+  width: 8px;
+  height: 8px;
+}
+.pin-score {
+  border-radius: 999px;
+  padding: 4px 7px;
+}
+.primary-button,
+.secondary-button,
+.report-button {
+  border-radius: 12px;
+}
+.place-art,
+.achievement-hero,
+.live-issues {
+  border-radius: 14px;
 }
 
 @media (min-width: 1200px) {
@@ -1923,10 +1954,10 @@ select {
     padding-right: 24px;
   }
   .category {
-    font-size: 11px;
+    font-size: 14px;
   }
   .place-card-info > strong {
-    font-size: 13px;
+    font-size: 16px;
   }
   .header-right .points-button > span {
     display: none;
@@ -1968,7 +1999,7 @@ select {
     border-color: #e1e6ec;
     height: 45px;
     padding: 0 15px;
-    font-size: 12px;
+    font-size: 15px;
     gap: 9px;
   }
   .search-shortcut {
@@ -1983,7 +2014,7 @@ select {
   .map-status {
     left: 17px;
     top: 137px;
-    font-size: 11px;
+    font-size: 14px;
     padding: 8px 10px;
     border-radius: 7px;
   }
@@ -2047,9 +2078,9 @@ select {
     display: none;
   }
   .explore-intro h1 {
-    font-size: 20px;
+    font-size: 22px;
     margin: 0;
-    letter-spacing: -0.7px;
+    letter-spacing: -0.23px;
     line-height: 1.35;
   }
   .explore-intro h1 > span {
@@ -2070,7 +2101,7 @@ select {
   .category {
     background: #fffffff5;
     box-shadow: 0 2px 8px #25394f0a;
-    font-size: 10px;
+    font-size: 13px;
     padding: 8px 12px;
     border-radius: 18px;
     min-height: 34px;
@@ -2083,13 +2114,13 @@ select {
     border: 0;
   }
   .nearby-heading h2 {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 500;
     color: #8690a0;
     letter-spacing: 0;
   }
   .nearby-heading h2 > span {
-    font-size: 10px;
+    font-size: 13px;
   }
   .nearby-heading p,
   .nearby-heading > svg {
@@ -2107,14 +2138,14 @@ select {
     height: 83px;
   }
   .place-card-info > strong {
-    font-size: 14px;
+    font-size: 16px;
   }
   .place-category {
-    font-size: 10px;
+    font-size: 13px;
   }
   .place-rating > span:last-child,
   .place-note {
-    font-size: 11px;
+    font-size: 14px;
   }
   .community-note {
     margin-left: 23px;
@@ -2139,7 +2170,7 @@ select {
     gap: 5px;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 14px;
     color: #64748b;
   }
   .mobile-nav button.active {
@@ -2174,7 +2205,7 @@ select {
     margin-top: 4px;
   }
   .detail-top > .place-category {
-    font-size: 11px;
+    font-size: 14px;
   }
   .detail-title {
     margin-top: 9px;
@@ -2191,7 +2222,7 @@ select {
     width: 17px;
   }
   .address {
-    font-size: 10px;
+    font-size: 13px;
   }
   .location-summary {
     margin-top: 19px;
@@ -2202,10 +2233,10 @@ select {
     height: 106px;
   }
   .score-description {
-    font-size: 11px;
+    font-size: 14px;
   }
   .review-count {
-    font-size: 11px;
+    font-size: 14px;
   }
   .detail-tabs {
     margin-left: -23px;
@@ -2214,41 +2245,41 @@ select {
     padding-right: 23px;
   }
   .detail-tabs button {
-    font-size: 13px;
+    font-size: 16px;
   }
   .detail-content {
     padding-top: 23px;
   }
   .section-heading h2 {
-    font-size: 15px;
+    font-size: 17px;
   }
   .section-heading > span {
-    font-size: 11px;
+    font-size: 14px;
   }
   .section-copy {
-    font-size: 11px;
+    font-size: 14px;
   }
   .issue-card {
     min-height: 52px;
   }
   .issue-card strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .issue-card small {
-    font-size: 11px;
+    font-size: 14px;
   }
   .report-button {
     min-height: 42px;
-    font-size: 11px;
+    font-size: 14px;
   }
   .feature-chip {
-    font-size: 10px;
+    font-size: 13px;
     padding: 9px;
   }
   .primary-button,
   .secondary-button {
     min-height: 48px;
-    font-size: 13px;
+    font-size: 16px;
   }
   .has-detail .map-status {
     top: 89px;
@@ -2285,7 +2316,7 @@ select {
     font-size: 18px;
   }
   .page-header p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .page-body {
     padding: 23px;
@@ -2298,17 +2329,17 @@ select {
     padding: 0 10px;
   }
   .search-field input {
-    font-size: 12px;
+    font-size: 15px;
   }
   .search-page .page-body {
     padding: 23px 20px;
   }
   .search-page .section-heading > span {
-    font-size: 10px;
+    font-size: 13px;
   }
   .search-page .recent-search {
     padding: 19px 3px;
-    font-size: 13px;
+    font-size: 16px;
     min-height: 55px;
   }
   .review-intro {
@@ -2318,22 +2349,22 @@ select {
     font-size: 25px;
   }
   .review-intro p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .rating-fieldset legend {
-    font-size: 13px;
-  }
-  .rating-fieldset p {
-    font-size: 11px;
-  }
-  .feature-fieldset legend {
     font-size: 16px;
   }
+  .rating-fieldset p {
+    font-size: 14px;
+  }
+  .feature-fieldset legend {
+    font-size: 18px;
+  }
   .feature-fieldset > p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .feature-option {
-    font-size: 11px;
+    font-size: 14px;
     gap: 7px;
     padding: 12px 9px;
   }
@@ -2345,17 +2376,17 @@ select {
     height: 14px;
   }
   .text-label {
-    font-size: 13px;
+    font-size: 16px;
   }
   textarea,
   select {
-    font-size: 16px;
+    font-size: 18px;
   }
   .character-count {
-    font-size: 10px;
+    font-size: 13px;
   }
   .data-note {
-    font-size: 10px;
+    font-size: 13px;
   }
   .achievement-hero {
     padding: 30px 15px;
@@ -2365,10 +2396,10 @@ select {
     gap: 12px;
   }
   .achievement-info h3 {
-    font-size: 13px;
+    font-size: 16px;
   }
   .achievement-info p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .achievement-badge {
     width: 48px;
@@ -2389,7 +2420,7 @@ select {
     padding: 22px;
   }
   .modal-body p {
-    font-size: 13px;
+    font-size: 16px;
   }
   .drawer-backdrop {
     padding: 0;
@@ -2406,19 +2437,19 @@ select {
     gap: 10px;
   }
   .toast p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .review-card > p {
-    font-size: 12px;
+    font-size: 15px;
   }
   .review-author strong {
-    font-size: 12px;
+    font-size: 15px;
   }
   .review-author > div > span {
-    font-size: 11px;
+    font-size: 14px;
   }
   .review-card .feature-chip {
-    font-size: 11px;
+    font-size: 14px;
   }
   .content-page .main-content > .error-message {
     margin: 20px;
@@ -2427,10 +2458,10 @@ select {
     flex-wrap: wrap;
   }
   .contribution-prompt strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .contribution-prompt p {
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 @media (max-width: 360px) {
@@ -2450,7 +2481,7 @@ select {
     padding: 20px;
   }
   .issue-card strong {
-    font-size: 10px;
+    font-size: 13px;
   }
 
 }

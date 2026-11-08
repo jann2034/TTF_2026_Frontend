@@ -156,7 +156,6 @@ export default function App() {
           <button className="search-trigger" onClick={() => navigate("search")}>
             <Icon name="Search" size={20} />
             <span>Search a place or address</span>
-            <span className="search-shortcut">Explore</span>
           </button>
         </div>
         <div className="header-right">
