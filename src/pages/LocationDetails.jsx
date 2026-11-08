@@ -179,9 +179,36 @@ export default function LocationDetails({
                 obstacle
               />
               {!place.obstacles.length && (
-                <p className="all-clear">No obstacles logged yet.</p>
+                <p>No obstacles logged yet.</p>
               )}
             </section>
+            {place.facts?.length > 0 && (
+              <section className="feature-section">
+                <div className="section-heading">
+                  <h2>Where this comes from</h2>
+                  <span>{place.facts.length} facts</span>
+                </div>
+                <ul className="fact-list">
+                  {place.facts.map((fact) => (
+                    <li key={fact.attribute} title={fact.definition}>
+                      <strong>
+                        {fact.label}: {fact.value}
+                        {fact.attribute === "bus_wheelchair_trips" && "%"}
+                      </strong>
+                      <small>
+                        {" "}
+                        {fact.sourceLabel}
+                        {fact.observedAt &&
+                          ` · ${new Date(fact.observedAt).toLocaleDateString("en-GB")}`}
+                        {fact.unverified && " · Unverified"}
+                        {fact.conflict && " · Sources disagree"}
+                        {!fact.fresh && " · Still true?"}
+                      </small>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
             <div className="contribution-prompt">
               <Icon name="HeartHandshake" size={25} />
               <div>
@@ -197,6 +224,9 @@ export default function LocationDetails({
               Community observations can change. Check the features that matter
               to you.
             </p>
+            {catalog.attribution?.length > 0 && (
+              <p className="data-note">Data: {catalog.attribution.join(" · ")}</p>
+            )}
           </>
         ) : (
           <>

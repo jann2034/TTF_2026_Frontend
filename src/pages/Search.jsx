@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api } from "../api/client";
+import { api, isMock } from "../api/client";
 import Icon from "../components/Icon";
 import { IconButton, ErrorMessage } from "../components/UI";
 import { PlaceCard } from "./Explore";
@@ -61,7 +61,10 @@ export default function SearchPage({ onBack, onSelect, initialLocations }) {
               <h2>Recent searches</h2>
               <span>Demo suggestions</span>
             </div>
-            {["Axess Hotel", "Kirchenstraße", "The Green Table"].map((name) => (
+            {(isMock
+              ? ["Axess Hotel", "Kirchenstraße", "The Green Table"]
+              : ["Almsee Rundweg", "Gmunden", "Scharnstein"]
+            ).map((name) => (
               <button
                 className="recent-search"
                 key={name}

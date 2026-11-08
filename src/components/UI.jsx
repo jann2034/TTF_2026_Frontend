@@ -62,6 +62,8 @@ export function PlaceArt({ place, large = false }) {
     Shopping: "ShoppingBag",
     Outdoors: "Trees",
     Health: "Heart",
+    Transport: "Bus",
+    "Culture & services": "Landmark",
   };
   return (
     <div

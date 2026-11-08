@@ -182,7 +182,13 @@ export default function App() {
       <main id="main-content" tabIndex={-1} className="main-content">
         {mapScreen && (
           <MapView
-            locations={route.page === "location" ? locations : filtered}
+            locations={
+              route.page !== "location"
+                ? filtered
+                : place && !locations.some((l) => l.id === place.id)
+                  ? [...locations, place] // Search reaches places outside the default list.
+                  : locations
+            }
             selected={route.page === "location" ? route.id : null}
             onSelect={select}
             notify={notify}

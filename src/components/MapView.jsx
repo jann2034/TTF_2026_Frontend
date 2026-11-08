@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { isMock } from "../api/client";
 import { IconButton } from "./UI";
-const center = [47.8262, 13.04];
+const center = isMock ? [47.8262, 13.04] : [47.9186, 13.7995];
 const wheelchair =
   '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="16" cy="4" r="2"/><path d="m15 8-3 5h5l3 5M12 8l-3 3M10 14a5 5 0 1 0 6 6"/></svg>';
 export default function MapView({ locations, selected, onSelect, notify }) {
@@ -148,7 +149,9 @@ export default function MapView({ locations, selected, onSelect, notify }) {
           .addTo(map.current)
           .bindTooltip("Your location");
         callbacks.current.notify(
-          "Your location is shown. Demo places remain in Salzburg.",
+          isMock
+            ? "Your location is shown. Demo places remain in Salzburg."
+            : "Your location is shown. Places cover the Traunsee-Almtal region.",
         );
       },
       () =>
@@ -170,7 +173,9 @@ export default function MapView({ locations, selected, onSelect, notify }) {
         {offline
           ? "Illustrated demo map"
           : tilesReady
-            ? "Salzburg, Austria"
+            ? isMock
+              ? "Salzburg, Austria"
+              : "Traunsee-Almtal, Austria"
             : "Loading street map…"}
       </div>
       <div className="map-controls">

@@ -1,3 +1,4 @@
+import { isMock } from "../api/client";
 import Icon from "../components/Icon";
 import { PlaceArt, Score, Stars } from "../components/UI";
 export const categories = [
@@ -7,6 +8,12 @@ export const categories = [
   { name: "Hotels", icon: "Hotel" },
   { name: "Outdoors", icon: "Trees" },
   { name: "Health", icon: "Heart" },
+  ...(isMock
+    ? []
+    : [
+        { name: "Transport", icon: "Bus" },
+        { name: "Culture & services", icon: "Landmark" },
+      ]),
 ];
 export function PlaceCard({ place, onClick }) {
   return (
@@ -102,7 +109,9 @@ export default function Explore({ locations, category, onCategory, onSelect }) {
         </div>
       </div>
       <p className="demo-caption">
-        A neighborhood preview · Illustrative places & community data
+        {isMock
+          ? "A neighborhood preview · Illustrative places & community data"
+          : "Traunsee-Almtal · Check the features that matter to you"}
       </p>
     </section>
   );

@@ -6,7 +6,7 @@ Set `VITE_API_MODE=http` and `VITE_API_BASE_URL` to the API root. Requests and r
 | ------ | ---------------------------------------- | ---------------------------------------- | --------------------------------------- |
 | GET    | `/locations?q=…`                         | Optional name/address query              | `Location[]`                            |
 | GET    | `/locations/:id`                         | —                                        | `Location`                              |
-| GET    | `/catalog`                               | —                                        | `{ amenities, obstacles, reportTypes }` |
+| GET    | `/catalog`                               | —                                        | `{ amenities, obstacles, reportTypes, attribution? }` |
 | GET    | `/me`                                    | —                                        | `Profile`                               |
 | GET    | `/me/achievements`                       | —                                        | `Achievement[]`                         |
 | POST   | `/locations/:id/reviews`                 | `{ rating, amenities, obstacles, text }` | `{ location, profile, pointsAwarded }`  |
@@ -52,10 +52,27 @@ type Report = {
   confirmedBy?: string[]; // Mock detail; not required by the UI
 };
 
+type Fact = {
+  attribute: string; // Vocabulary id from the dataset
+  label: string;
+  definition: string;
+  value: string | number;
+  source: string;
+  sourceLabel: string;
+  sourceRef: string | null;
+  observedAt: string | null;
+  fresh: boolean; // False: ask "still true?"
+  unverified: boolean; // True for facts crawled from business websites
+  conflict: boolean; // Sources disagree on this attribute
+  confirmations: number;
+};
+
 type Location = {
   id: string;
   name: string;
-  category: "Hotels" | "Food & drink" | "Shopping" | "Outdoors" | "Health";
+  category: "Hotels" | "Food & drink" | "Shopping" | "Outdoors" | "Health" | "Transport" | "Culture & services";
+  wheelchairAccess?: "yes" | "limited" | "no" | "unknown"; // Real API only
+  facts?: Fact[]; // Real API only: one resolved value per attribute
   address: string;
   lat: number;
   lng: number;
