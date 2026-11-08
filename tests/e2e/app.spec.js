@@ -1,9 +1,15 @@
 import { test, expect } from "@playwright/test";
 
+// On phones the places list is a collapsed bottom sheet; open it before tapping a card.
+async function showPlaces(page) {
+  const toggle = page.getByRole("button", { name: "Show places" });
+  if (await toggle.isVisible()) await toggle.click();
+}
+
 test.beforeEach(async ({ page }) => {
   await page.goto("/");
   await expect(
-    page.getByRole("heading", { name: "More places. More possibilities." }),
+    page.getByRole("heading", { name: /^Explore nearby/ }),
   ).toBeVisible();
   const search = page.getByRole("button", {
     name: "Search a place or address",
@@ -94,6 +100,7 @@ test("search, review, points, achievements and persistence", async ({
 });
 
 test("reports can be confirmed, resolved and added", async ({ page }) => {
+  await showPlaces(page);
   await page.getByRole("button", { name: /Hotels.*Axess Hotel/ }).click();
   await page.getByRole("button", { name: /Elevator out of service/ }).click();
   await page.getByRole("button", { name: "Yes, still an issue" }).click();
@@ -158,6 +165,7 @@ test("tile failure falls back and a selected marker stays above the mobile sheet
   );
   await page.reload();
   await expect(page.locator(".map-status")).toHaveText("Illustrated demo map");
+  await showPlaces(page);
   await page.getByRole("button", { name: /Hotels.*Axess Hotel/ }).click();
   await expect(
     page.getByRole("heading", { name: "Axess Hotel", exact: true }),
@@ -179,6 +187,7 @@ test("tile failure falls back and a selected marker stays above the mobile sheet
 test("place cards never claim step-free access after steps are recorded", async ({
   page,
 }) => {
+  await showPlaces(page);
   await page.getByRole("button", { name: /Food & drink.*The Green Table/ }).click();
   await page.getByRole("button", { name: "Leave a review" }).click();
   await page.getByRole("radio", { name: "2 stars", exact: true }).check();

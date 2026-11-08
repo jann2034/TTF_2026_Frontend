@@ -19,6 +19,11 @@ export default function MapView({ locations, selected, onSelect, notify }) {
       zoomControl: false,
       attributionControl: true,
       fadeAnimation: false,
+      // Gentler, finer-grained scroll zoom instead of jumping a full level per tick.
+      zoomSnap: 0.25,
+      wheelPxPerZoomLevel: 140,
+      wheelDebounceTime: 30,
+      bounceAtZoomLimits: false,
     }).setView(center, 16);
     map.current = instance;
     instance.createPane("fallback");

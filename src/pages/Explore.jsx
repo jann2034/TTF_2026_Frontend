@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import Icon from "../components/Icon";
 import { PlaceArt, Score, Stars } from "../components/UI";
 export const categories = [
@@ -44,19 +45,43 @@ export function PlaceCard({ place, onClick }) {
   );
 }
 export default function Explore({ locations, category, onCategory, onSelect }) {
+  // On phones the list is a bottom sheet: collapsed by default so the map has room.
+  const [open, setOpen] = useState(false);
+  const panel = useRef();
+  const startY = useRef(null);
+  const atTop = () => (panel.current?.scrollTop ?? 0) <= 0;
+  const setSheet = (value) => {
+    setOpen(value);
+    if (!value && panel.current) panel.current.scrollTop = 0;
+  };
   return (
-    <section className="explore-panel">
-      <div className="explore-intro">
-        <h1>
-          More places.
-          <br />
-          <span>More possibilities.</span>
-        </h1>
-        <p>
-          Find places that work for you.
-          <br />A little more accessible, together.
-        </p>
-      </div>
+    <section
+      ref={panel}
+      className={`explore-panel ${open ? "sheet-open" : "sheet-closed"}`}
+      onTouchStart={(e) => {
+        startY.current = e.touches[0].clientY;
+      }}
+      onTouchEnd={(e) => {
+        if (startY.current === null) return;
+        const dy = e.changedTouches[0].clientY - startY.current;
+        startY.current = null;
+        if (!open && dy < -30) setSheet(true);
+        else if (open && dy > 40 && atTop()) setSheet(false);
+      }}
+      onWheel={(e) => {
+        if (!open && e.deltaY > 0) setSheet(true);
+        else if (open && e.deltaY < 0 && atTop()) setSheet(false);
+      }}
+    >
+      <button
+        type="button"
+        className="sheet-toggle"
+        aria-expanded={open}
+        aria-label={open ? "Hide places" : "Show places"}
+        onClick={() => setSheet(!open)}
+      >
+        <span />
+      </button>
       <div className="category-list" aria-label="Filter places by category">
         {categories.map((c) => (
           <button
@@ -70,13 +95,15 @@ export default function Explore({ locations, category, onCategory, onSelect }) {
           </button>
         ))}
       </div>
-      <div className="nearby-heading">
-        <div>
-          <h2>
-            Explore nearby <span>{locations.length}</span>
-          </h2>
-          <p>Small discoveries. More confident journeys.</p>
-        </div>
+      <div
+        className="nearby-heading"
+        onClick={() => {
+          if (!open) setSheet(true);
+        }}
+      >
+        <h1>
+          Explore nearby <span>{locations.length}</span>
+        </h1>
       </div>
       <div className="places-list">
         {locations.map((place) => (
@@ -87,15 +114,6 @@ export default function Explore({ locations, category, onCategory, onSelect }) {
             No places in this category yet. Try another category.
           </p>
         )}
-      </div>
-      <div className="community-note">
-        <span className="community-icon">
-          <Icon name="HeartHandshake" size={24} />
-        </span>
-        <div>
-          <strong>Your experience opens doors.</strong>
-          <p>Share what you find. Help someone feel welcome.</p>
-        </div>
       </div>
       <p className="demo-caption">
         A neighborhood preview · Illustrative places & community data

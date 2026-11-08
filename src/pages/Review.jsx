@@ -70,16 +70,6 @@ export default function Review({ place, catalog, onBack, onSubmit }) {
         onBack={onBack}
       />
       <form className="page-body" onSubmit={submit}>
-        <div className="review-intro">
-          <span className="round-illustration">
-            <Icon name="HeartHandshake" size={30} />
-          </span>
-          <h2>
-            A small review.
-            <br />A big difference.
-          </h2>
-          <p>Help others know what to expect before they go.</p>
-        </div>
         <fieldset className="rating-fieldset">
           <legend>How accessible was this place?</legend>
           <div

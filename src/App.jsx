@@ -120,7 +120,7 @@ export default function App() {
         {error ? (
           <ErrorMessage message={error} retry={() => setRetry((n) => n + 1)} />
         ) : (
-          <p>Finding a little more possibility…</p>
+          <p>Loading…</p>
         )}
       </main>
     );
@@ -278,7 +278,7 @@ export default function App() {
       )}
       {menu && (
         <Modal
-          title="Your Helping Hand"
+          title="Your profile"
           className="drawer-backdrop"
           onClose={() => setMenu(false)}
         >
@@ -286,7 +286,6 @@ export default function App() {
             <div className="profile-card">
               <span className="avatar big">{profile.initials}</span>
               <h2>{profile.name}</h2>
-              <p>Making room for everyone.</p>
               <button
                 className="profile-points"
                 onClick={() => navigate("achievements")}
@@ -312,18 +311,6 @@ export default function App() {
                 <Icon name="ChevronRight" size={17} />
               </button>
             </nav>
-            <div className="drawer-message">
-              <Icon name="HeartHandshake" size={30} />
-              <h3>
-                Better access.
-                <br />
-                Built together.
-              </h3>
-              <p>
-                Every observation makes someone’s next journey a little easier.
-              </p>
-            </div>
-            <p className="demo-caption">Helping Hand · Hackathon edition</p>
           </div>
         </Modal>
       )}

@@ -474,13 +474,13 @@ button:not(:disabled):active {
 .nearby-heading > svg {
   color: #64748b;
 }
-.nearby-heading h2 {
+.nearby-heading h1 {
   font-size: 18px;
   display: flex;
   gap: 8px;
   align-items: center;
 }
-.nearby-heading h2 > span {
+.nearby-heading h1 > span {
   font:
           500 13px Nunito,
     sans-serif;
@@ -2113,13 +2113,13 @@ select {
     padding: 1px 23px 3px;
     border: 0;
   }
-  .nearby-heading h2 {
+  .nearby-heading h1 {
     font-size: 14px;
     font-weight: 500;
     color: #8690a0;
     letter-spacing: 0;
   }
-  .nearby-heading h2 > span {
+  .nearby-heading h1 > span {
     font-size: 13px;
   }
   .nearby-heading p,
@@ -2627,7 +2627,7 @@ select {
 .category.active svg {
   color: white;
 }
-.nearby-heading h2 > span {
+.nearby-heading h1 > span {
   background: var(--sky);
   color: var(--blue);
   border-radius: 999px;
@@ -3387,5 +3387,327 @@ select:focus {
     pointer-events: auto;
     color: var(--ink);
     background: white;
+  }
+}
+
+/* =========================================================
+   Mobile polish + collapsible places sheet
+   ========================================================= */
+html,
+body {
+  overscroll-behavior: none;
+}
+.sheet-toggle {
+  display: none;
+}
+
+/* Selected filter: bright and obvious (and not washed out by a sticky hover on touch) */
+.category-list .category:nth-child(n):hover {
+  background: white;
+}
+@media (hover: hover) {
+  .category-list .category:nth-child(n):hover {
+    background: var(--sky);
+  }
+}
+.category-list .category.active:nth-child(n),
+.category-list .category.active:nth-child(n):hover {
+  background: var(--blue);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 4px 14px #2f6fe466;
+}
+.category-list .category.active svg {
+  color: white;
+}
+
+@media (max-width: 760px) {
+  /* Top bar: menu + search, both 48px tall */
+  .app-header {
+    height: 80px;
+    padding: 16px 16px 0;
+    align-items: flex-start;
+  }
+  .app-header .menu-button {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    box-shadow: 0 2px 12px #23283a24;
+  }
+  .search-trigger {
+    height: 48px;
+    font-size: 15px;
+    padding: 0 18px;
+  }
+
+  /* Filter chips: one tidy row under the search bar */
+  .category-list {
+    top: 76px;
+    padding: 0 16px 8px;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .category {
+    pointer-events: auto;
+    min-height: 40px;
+    padding: 9px 15px 9px 13px;
+    font-size: 14px;
+  }
+  .category svg {
+    width: 16px;
+  }
+
+  /* Map overlays line up on the same row, with big tap targets */
+  .map-status {
+    top: 130px;
+    left: 16px;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  .map-controls {
+    top: 130px;
+    right: 16px;
+    padding: 4px;
+    border-radius: 14px;
+  }
+  .map-controls .icon-button {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+  .map-controls .icon-button svg {
+    width: 20px;
+  }
+  .has-detail .map-status,
+  .has-detail .map-controls {
+    top: 80px;
+  }
+
+  /* Bottom nav */
+  .mobile-nav {
+    height: 72px;
+  }
+  .mobile-nav button {
+    font-size: 13px;
+    gap: 4px;
+  }
+
+  /* Places sheet: peeks by default, swipe up to open, swipe down to close */
+  .explore-panel {
+    bottom: 72px;
+    height: calc(100dvh - 72px - 140px);
+    padding: 0 0 16px;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -6px 24px #23283a1f;
+    transition: height 0.3s ease;
+    overscroll-behavior: contain;
+  }
+  .explore-panel.sheet-closed {
+    height: 120px;
+    overflow: hidden;
+  }
+  .explore-panel:before {
+    display: none;
+  }
+  .sheet-toggle {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 34px;
+    padding: 0;
+    background: var(--panel);
+    border-radius: 24px 24px 0 0;
+  }
+  .sheet-toggle span {
+    width: 44px;
+    height: 5px;
+    border-radius: 99px;
+    background: #bccbe6;
+  }
+  .explore-intro {
+    padding: 0 20px 4px;
+  }
+  .explore-intro h1 {
+    font-size: 21px;
+  }
+  .nearby-heading {
+    padding: 6px 20px 12px;
+  }
+  .places-list {
+    padding: 0 16px;
+  }
+  .place-card {
+    padding: 12px;
+  }
+  .community-note {
+    margin: 16px 16px 0;
+  }
+  .map-page:not(.has-detail) .leaflet-bottom {
+    bottom: calc(72px + 120px);
+  }
+  .map-page:not(.has-detail) .toast-region {
+    bottom: 204px;
+  }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+  .explore-panel {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   Slimmer collapsed sheet + account screens that fit
+   ========================================================= */
+@media (max-width: 760px) {
+  /* Collapsed: only the handle and the title line peek out */
+  .explore-panel.sheet-closed {
+    height: 66px;
+  }
+  .sheet-toggle {
+    height: 24px;
+  }
+  .explore-intro {
+    padding: 0 20px 6px;
+  }
+  .sheet-closed .explore-intro {
+    cursor: pointer;
+  }
+  .map-page:not(.has-detail) .leaflet-bottom {
+    bottom: calc(72px + 66px);
+  }
+  .map-page:not(.has-detail) .toast-region {
+    bottom: 150px;
+  }
+
+  /* Account menu: everything fits on one screen */
+  .drawer-backdrop .modal {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .drawer-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px 20px;
+    min-height: 0;
+  }
+  .modal-header {
+    padding: 12px 18px;
+  }
+  .profile-card h2 {
+    margin-top: 10px;
+  }
+  .profile-card .avatar.big {
+    width: 60px;
+    height: 60px;
+  }
+  .profile-points {
+    margin-top: 14px;
+    padding: 12px 10px;
+  }
+  .drawer-nav {
+    padding: 14px 0;
+    gap: 2px;
+  }
+  .drawer-nav > button {
+    min-height: 48px;
+    padding: 10px 8px;
+  }
+  .drawer-message {
+    margin-top: auto;
+    padding: 16px;
+  }
+  .drawer-message > svg {
+    width: 24px;
+    height: 24px;
+  }
+  .drawer-message h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-top: 6px;
+  }
+  .drawer-message p {
+    margin-top: 6px;
+  }
+  .drawer-body .demo-caption {
+    margin: 12px 0 0;
+  }
+
+  /* Settings page: compact enough to fit without scrolling */
+  .settings-page .page-header {
+    padding: 14px 16px;
+  }
+  .settings-page .page-body {
+    padding: 16px;
+  }
+  .settings-page .preview-note {
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .settings-page .preview-note p {
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+  .settings-page .page-body > h2 {
+    margin-bottom: 8px;
+  }
+  .settings-row {
+    padding: 11px 14px;
+    margin-bottom: 6px;
+    min-height: 56px;
+  }
+  .settings-row > div {
+    gap: 2px;
+  }
+  .settings-footer {
+    padding: 14px 0 0;
+  }
+  .settings-footer img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 6px;
+  }
+  .settings-footer p {
+    margin: 2px 0;
+  }
+}
+/* Very short phones: drop the extra message so the menu still fits */
+@media (max-width: 760px) and (max-height: 700px) {
+  .drawer-message,
+  .settings-footer {
+    display: none;
+  }
+}
+
+/* Explore panel without the slogan: filters first, then "Explore nearby" */
+.explore-panel .category-list {
+  padding-top: 26px;
+}
+.nearby-heading h1 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: var(--ink);
+}
+@media (max-width: 760px) {
+  .explore-panel .category-list {
+    padding-top: 0;
+  }
+  .nearby-heading {
+    padding: 4px 20px 12px;
+  }
+  .nearby-heading h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .sheet-closed .nearby-heading {
+    cursor: pointer;
   }
 }
