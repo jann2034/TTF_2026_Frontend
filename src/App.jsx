@@ -160,7 +160,6 @@ export default function App() {
           </button>
         </div>
         <div className="header-right">
-          <span className="demo-label">{isMock ? "DEMO" : "COMMUNITY"}</span>
           <button
             className="points-button"
             onClick={() => navigate("achievements")}
