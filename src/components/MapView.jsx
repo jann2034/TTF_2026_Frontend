@@ -38,10 +38,55 @@ function streetDetails(properties) {
 }
 const wheelchair =
   '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="16" cy="4" r="2"/><path d="m15 8-3 5h5l3 5M12 8l-3 3M10 14a5 5 0 1 0 6 6"/></svg>';
+const PIN_GAP = 4;
+const PIN_POINTER = 6;
+// Which pin wins when two would overlap: live issues, then reviews, then known access.
+const pinRank = ({ place }) =>
+  (place.reports.length ? 4000 : 0) +
+  (place.reviewCount ? 2000 : 0) +
+  (place.wheelchairAccess && place.wheelchairAccess !== "unknown" ? 1000 : 0) +
+  (place.facts?.length ?? 0);
+function rankPins(pins) {
+  // Measured here because a hidden pin has no size later.
+  pins.forEach((pin) => {
+    pin.left = pin.el.offsetLeft;
+    pin.top = pin.el.offsetTop;
+    pin.width = pin.el.offsetWidth;
+    pin.height = pin.el.offsetHeight + PIN_POINTER;
+  });
+  return pins.sort(
+    (a, b) => Number(b.selected) - Number(a.selected) || pinRank(b) - pinRank(a),
+  );
+}
+function declutterPins(instance, pins) {
+  const zoom = instance.getZoom();
+  const shown = [];
+  pins.forEach((pin) => {
+    const point = instance.project(pin.marker.getLatLng(), zoom);
+    const left = point.x - 40 + pin.left - PIN_GAP;
+    const top = point.y - 40 + pin.top - PIN_GAP;
+    const box = {
+      left,
+      top,
+      right: left + pin.width + PIN_GAP * 2,
+      bottom: top + pin.height + PIN_GAP * 2,
+    };
+    const free = !shown.some(
+      (other) =>
+        box.left < other.right &&
+        box.right > other.left &&
+        box.top < other.bottom &&
+        box.bottom > other.top,
+    );
+    pin.marker.getElement().style.display = free ? "" : "none";
+    if (free) shown.push(box);
+  });
+}
 export default function MapView({ locations, selected, onSelect, notify }) {
   const container = useRef();
   const map = useRef();
   const markers = useRef();
+  const pins = useRef([]);
   const tile = useRef();
   const callbacks = useRef({ onSelect, notify });
   callbacks.current = { onSelect, notify };
@@ -93,6 +138,7 @@ export default function MapView({ locations, selected, onSelect, notify }) {
     // Added to the map, not the tiles: the street layer needs it even on the fallback map.
     instance.attributionControl.addAttribution(OSM_CREDIT);
     markers.current = L.layerGroup().addTo(instance);
+    instance.on("zoomend", () => declutterPins(instance, pins.current));
     L.circleMarker(center, {
       radius: 8,
       fillColor: "#2464d0",
@@ -163,6 +209,7 @@ export default function MapView({ locations, selected, onSelect, notify }) {
   useEffect(() => {
     if (!markers.current) return;
     markers.current.clearLayers();
+    const built = [];
     locations.forEach((place) => {
       const el = document.createElement("div");
       el.className = `map-pin ${selected === place.id ? "selected" : ""}`;
@@ -206,7 +253,10 @@ export default function MapView({ locations, selected, onSelect, notify }) {
             ? `Open ${place.name}, wheelchair access: ${access}`
             : `Open ${place.name}, accessibility ${place.score} out of 5`,
         );
+      built.push({ marker, el, place, selected: selected === place.id });
     });
+    pins.current = rankPins(built);
+    declutterPins(map.current, pins.current);
   }, [locations, selected]);
   useEffect(() => {
     const place = locations.find((l) => l.id === selected);
